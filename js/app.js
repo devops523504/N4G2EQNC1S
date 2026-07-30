@@ -6,6 +6,7 @@
   const suggestionsList = document.getElementById("suggestions-list");
   const findBtn = document.getElementById("find-stops-btn");
   const statusMessage = document.getElementById("status-message");
+  const resultsHeading = document.getElementById("results-heading");
   const resultsList = document.getElementById("results-list");
 
   let busData = null;
@@ -78,9 +79,18 @@
     schoolMarkers = [];
 
     busData.schools.forEach((school) => {
-      const marker = new mapboxgl.Marker({ color: "#1d4e89" })
+      const el = document.createElement("div");
+      el.className = "school-marker";
+      el.textContent = "S";
+
+      const popupHtml = `
+        <p class="popup-school-name">${escapeHtml(school.name)}</p>
+        <p class="popup-school-address">${escapeHtml(school.address)}</p>
+      `;
+
+      const marker = new mapboxgl.Marker({ element: el })
         .setLngLat([school.lng, school.lat])
-        .setPopup(new mapboxgl.Popup().setText(school.name))
+        .setPopup(new mapboxgl.Popup({ offset: 18 }).setHTML(popupHtml))
         .addTo(map);
       schoolMarkers.push(marker);
     });
@@ -204,21 +214,33 @@
       .sort((a, b) => a.distanceMiles - b.distanceMiles)
       .slice(0, 3);
 
-    renderResults(ranked);
+    const school = busData.schools.find((s) => s.id === selectedSchoolId);
+
+    renderResults(ranked, school);
     updateResultsOnMap(ranked);
     setStatus("");
   }
 
-  function renderResults(stops) {
+  function renderResults(stops, school) {
+    if (school) {
+      resultsHeading.textContent = `Nearest stops for ${school.name}`;
+      resultsHeading.hidden = false;
+    }
+
     resultsList.innerHTML = "";
 
     stops.forEach((stop, index) => {
+      const stopNumber = index + 1;
       const card = document.createElement("article");
       card.className = "stop-card";
       card.innerHTML = `
-        <h3>#${index + 1}: ${escapeHtml(stop.route)}</h3>
+        <div class="stop-card-header">
+          <span class="stop-number-badge">${stopNumber}</span>
+          <h3>Stop #${stopNumber}</h3>
+        </div>
+        <span class="route-badge">${escapeHtml(stop.route)}</span>
         <p class="stop-location">${escapeHtml(stop.crossStreets)}</p>
-        <p class="stop-distance">${stop.distanceMiles.toFixed(2)} miles from your address</p>
+        <p class="stop-distance">${stop.distanceMiles.toFixed(2)} miles from your address (straight-line)</p>
         <dl class="stop-times">
           <dt>AM Pickup</dt><dd>${escapeHtml(stop.amPickup)}</dd>
           <dt>PM Drop-off</dt><dd>${escapeHtml(stop.pmDropoff)}</dd>
@@ -238,17 +260,31 @@
     const bounds = new mapboxgl.LngLatBounds();
     if (school) bounds.extend([school.lng, school.lat]);
 
-    const homeMarker = new mapboxgl.Marker({ color: "#c0392b" })
+    const homeEl = document.createElement("div");
+    homeEl.className = "home-marker";
+
+    const homeMarker = new mapboxgl.Marker({ element: homeEl })
       .setLngLat([selectedCoords.lng, selectedCoords.lat])
-      .setPopup(new mapboxgl.Popup().setText("Your home address"))
+      .setPopup(new mapboxgl.Popup({ offset: 18 }).setHTML("<p class=\"popup-route\">Your home address</p>"))
       .addTo(map);
     resultMarkers.push(homeMarker);
     bounds.extend([selectedCoords.lng, selectedCoords.lat]);
 
-    stops.forEach((stop) => {
-      const marker = new mapboxgl.Marker({ color: "#27ae60" })
+    stops.forEach((stop, index) => {
+      const stopNumber = index + 1;
+      const el = document.createElement("div");
+      el.className = "stop-marker";
+      el.textContent = stopNumber;
+
+      const popupHtml = `
+        <span class="popup-stop-badge">Stop #${stopNumber}</span>
+        <p class="popup-route">${escapeHtml(stop.route)}</p>
+        <p class="popup-location">${escapeHtml(stop.crossStreets)}</p>
+      `;
+
+      const marker = new mapboxgl.Marker({ element: el })
         .setLngLat([stop.lng, stop.lat])
-        .setPopup(new mapboxgl.Popup().setText(`${stop.route}: ${stop.crossStreets}`))
+        .setPopup(new mapboxgl.Popup({ offset: 18 }).setHTML(popupHtml))
         .addTo(map);
       resultMarkers.push(marker);
       bounds.extend([stop.lng, stop.lat]);

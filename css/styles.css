@@ -1,7 +1,9 @@
 :root {
-  --color-primary: #1d4e89;
-  --color-primary-dark: #163c68;
-  --color-accent: #27ae60;
+  --color-primary: #1d3557;
+  --color-primary-dark: #14263f;
+  --color-accent: #ec7a1e;
+  --color-accent-dark: #c8630f;
+  --color-accent-light: #fdece0;
   --color-error: #c0392b;
   --color-text: #1f2933;
   --color-muted: #5b6470;
@@ -26,17 +28,33 @@ body {
   background: var(--color-primary);
   color: #fff;
   padding: 2rem 1.5rem;
-  text-align: center;
+  border-top: 5px solid var(--color-accent);
+}
+
+.site-header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-icon {
+  flex: none;
+  width: 42px;
+  height: 42px;
+  color: var(--color-accent);
 }
 
 .site-header h1 {
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.4rem;
   font-size: 1.75rem;
+  letter-spacing: -0.01em;
 }
 
 .subtitle {
   margin: 0;
-  color: #dce6f1;
+  color: #cfd6dd;
   font-size: 1rem;
 }
 
@@ -66,7 +84,8 @@ body {
 
 #school-select {
   width: 100%;
-  padding: 0.65rem 0.75rem;
+  min-height: 44px;
+  padding: 0.7rem 0.75rem;
   font-size: 1rem;
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
@@ -75,7 +94,7 @@ body {
 }
 
 #school-select:focus {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid var(--color-accent);
   outline-offset: 1px;
 }
 
@@ -85,14 +104,15 @@ body {
 
 #address-input {
   width: 100%;
-  padding: 0.65rem 0.75rem;
+  min-height: 44px;
+  padding: 0.7rem 0.75rem;
   font-size: 1rem;
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
 }
 
 #address-input:focus {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid var(--color-accent);
   outline-offset: 1px;
 }
 
@@ -114,6 +134,9 @@ body {
 }
 
 .suggestions-list li {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
   padding: 0.6rem 0.75rem;
   cursor: pointer;
   font-size: 0.95rem;
@@ -121,28 +144,30 @@ body {
 
 .suggestions-list li:hover,
 .suggestions-list li:focus {
-  background: var(--color-bg);
+  background: var(--color-accent-light);
 }
 
 #find-stops-btn {
+  width: 100%;
   margin-top: 0.85rem;
-  padding: 0.65rem 1.25rem;
+  min-height: 44px;
+  padding: 0.7rem 1.25rem;
   font-size: 1rem;
   font-weight: 600;
   color: #fff;
-  background: var(--color-primary);
+  background: var(--color-accent);
   border: none;
   border-radius: var(--radius);
   cursor: pointer;
 }
 
 #find-stops-btn:disabled {
-  background: #9aa9bb;
+  background: #c9cfd6;
   cursor: not-allowed;
 }
 
 #find-stops-btn:not(:disabled):hover {
-  background: var(--color-primary-dark);
+  background: var(--color-accent-dark);
 }
 
 .status-message {
@@ -157,6 +182,12 @@ body {
   font-weight: 600;
 }
 
+.results-heading {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  color: var(--color-primary);
+}
+
 .results-list {
   display: grid;
   gap: 1rem;
@@ -165,15 +196,48 @@ body {
 
 .stop-card {
   border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-accent);
   border-radius: var(--radius);
   padding: 1rem;
   background: var(--color-bg);
 }
 
+.stop-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.stop-number-badge {
+  flex: none;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .stop-card h3 {
-  margin: 0 0 0.4rem;
+  margin: 0;
   font-size: 1.05rem;
   color: var(--color-primary);
+}
+
+.route-badge {
+  display: inline-block;
+  margin: 0 0 0.5rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  background: var(--color-accent-light);
+  color: var(--color-accent-dark);
+  font-weight: 600;
+  font-size: 0.8rem;
 }
 
 .stop-location {
@@ -184,7 +248,7 @@ body {
 .stop-distance {
   margin: 0 0 0.6rem;
   color: var(--color-muted);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 .stop-times {
@@ -209,9 +273,123 @@ body {
   border-radius: var(--radius);
 }
 
+/* Custom numbered map pins for the 3 nearest stops */
+.stop-marker {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+}
+
+.stop-marker::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--color-accent);
+}
+
+/* Permanent school pins */
+.school-marker {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  background: var(--color-primary);
+  color: var(--color-accent);
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+}
+
+.home-marker {
+  width: 26px;
+  height: 26px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  background: var(--color-primary);
+  border: 2px solid #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+/* Mapbox popup styling to match the site */
+.mapboxgl-popup-content {
+  padding: 0.75rem 0.9rem;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+}
+
+.popup-stop-badge {
+  display: inline-block;
+  margin-bottom: 0.3rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  background: var(--color-accent-light);
+  color: var(--color-accent-dark);
+  font-weight: 700;
+  font-size: 0.78rem;
+}
+
+.popup-route {
+  margin: 0 0 0.15rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  font-size: 0.95rem;
+}
+
+.popup-location {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 0.88rem;
+}
+
+.popup-school-name {
+  margin: 0 0 0.15rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  font-size: 0.95rem;
+}
+
+.popup-school-address {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
 .site-footer {
-  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
   padding: 1.5rem;
   color: var(--color-muted);
   font-size: 0.85rem;
+}
+
+.footer-tip {
+  background: var(--color-accent-light);
+  color: var(--color-text);
+  border-radius: var(--radius);
+  padding: 0.85rem 1rem;
+  margin: 0 0 0.85rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.footer-tip strong {
+  color: var(--color-accent-dark);
 }

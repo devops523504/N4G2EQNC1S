@@ -10,8 +10,19 @@
 <body>
 
 <header class="site-header">
-  <h1>Find Your Nearest Bus Stop</h1>
-  <p class="subtitle">Enter your home address to see the 3 closest bus stops, pickup times, and drop-off times.</p>
+  <div class="site-header-inner">
+    <svg class="header-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M4 16V6.5C4 5.12 5.12 4 6.5 4h11C18.88 4 20 5.12 20 6.5V16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M4 16h16v1.5a1 1 0 0 1-1 1h-1v1a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H9v1a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-1H5a1 1 0 0 1-1-1V16Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M4 12h16" stroke="currentColor" stroke-width="1.6"/>
+      <circle cx="8" cy="9" r="0.9" fill="currentColor"/>
+      <circle cx="16" cy="9" r="0.9" fill="currentColor"/>
+    </svg>
+    <div>
+      <h1>Find Your Nearest Bus Stop</h1>
+      <p class="subtitle">Select your child's school and enter your home address to see the 3 closest bus stops, pickup times, and drop-off times.</p>
+    </div>
+  </div>
 </header>
 
 <main class="container">
@@ -40,6 +51,7 @@
   </section>
 
   <section class="results-panel" aria-label="Nearest bus stops">
+    <h2 id="results-heading" class="results-heading" hidden></h2>
     <div id="results-list" class="results-list"></div>
   </section>
 
@@ -50,6 +62,11 @@
 </main>
 
 <footer class="site-footer">
+  <p class="footer-tip">
+    <strong>A friendly reminder:</strong> pickup and drop-off times are estimates and may shift slightly
+    as routes are finalized. We recommend families arrive at the stop a few minutes early, especially
+    during the first weeks of school, so no one misses the bus.
+  </p>
   <p>Bus stop information shown is sample placeholder data for demonstration purposes only.</p>
 </footer>
 
