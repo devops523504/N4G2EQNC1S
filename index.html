@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Find Your Bus Stop</title>
+<title>Hop a Ride to KIPP!</title>
 <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,7 @@
       <circle cx="8" cy="9" r="0.9" fill="currentColor"/>
       <circle cx="16" cy="9" r="0.9" fill="currentColor"/>
     </svg>
-    <h1>Hop on to KIPP!</h1>
+    <h1>Hop a Ride to KIPP!</h1>
   </div>
 </header>
 
@@ -30,8 +30,8 @@
 
   <p class="footer-tip">
     <strong>A friendly reminder:</strong> pickup and drop-off times are estimates and may shift slightly
-    as routes are finalized. We recommend families arrive at the stop a few minutes early, especially
-    during the first weeks of school, so no one misses the bus.
+    as routes are finalized. We recommend families arrive at the pickup location a few minutes early,
+    especially during the first weeks of school, so no one misses their ride.
   </p>
 
   <section class="search-panel" aria-label="Address search">
@@ -60,16 +60,16 @@
       data-expired-callback="onTurnstileExpired"
       data-error-callback="onTurnstileExpired"
     ></div>
-    <button id="find-stops-btn" type="button" disabled>Find My Bus Stops</button>
+    <button id="find-stops-btn" type="button" disabled>Find Closest Locations</button>
     <p id="status-message" class="status-message" role="status"></p>
   </section>
 
-  <section class="results-panel" aria-label="Nearest bus stops">
+  <section class="results-panel" aria-label="Nearest locations" hidden>
     <h2 id="results-heading" class="results-heading" hidden></h2>
     <div id="results-list" class="results-list"></div>
   </section>
 
-  <section class="map-panel" aria-label="Map of bus stops" hidden>
+  <section class="map-panel" aria-label="Map of locations" hidden>
     <div id="map"></div>
   </section>
 
@@ -77,8 +77,8 @@
 
 <footer class="site-footer">
   <p class="footer-tip footer-tip-info">
-    <strong>Please note:</strong> the stops shown here are not yet your child's permanent bus stop
-    assignment. Families will receive confirmation of their assigned pickup and drop-off stop later
+    <strong>Please note:</strong> the locations shown here are not yet your child's permanent pickup
+    assignment. Families will receive confirmation of their assigned pickup and drop-off location later
     this month, once routes are finalized for the school year.
   </p>
 </footer>

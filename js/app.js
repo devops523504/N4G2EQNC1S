@@ -259,8 +259,10 @@
   }
 
   function renderResults(stops, school) {
+    document.querySelector(".results-panel").hidden = false;
+
     if (school) {
-      resultsHeading.textContent = `Nearest stops for ${school.name}`;
+      resultsHeading.textContent = `Nearest locations for ${school.name}`;
       resultsHeading.hidden = false;
     }
 
@@ -324,7 +326,7 @@
       el.textContent = stopNumber;
 
       const popupHtml = `
-        <span class="popup-stop-badge ${rankClass}">Stop #${stopNumber}</span>
+        <span class="popup-stop-badge ${rankClass}">#${stopNumber}</span>
         <p class="popup-route">${escapeHtml(stop.route)}</p>
         <p class="popup-location">${escapeHtml(stop.crossStreets)}</p>
       `;
