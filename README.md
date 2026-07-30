@@ -12,30 +12,57 @@ drop-off time.
 - `index.html` / `css/styles.css` — page structure and styling.
 - `js/config.js` — holds the Mapbox access token.
 - `js/app.js` — school dropdown filtering, address autocomplete (Mapbox
-  Geocoding API), distance calculation (straight-line/haversine, in
-  miles), results rendering, and an optional map view.
-- `data/bus-stops.json` — the schools and bus stop dataset.
+  Geocoding API), results rendering, and an optional map view.
+- `data/schools.json` — **public** data: the 7 schools (name, address,
+  coordinates). Fetched directly by the browser.
+- `functions/_data/stops.json` — **private, server-side only** bus stop
+  roster. This is intentionally placed under `functions/`, which
+  Cloudflare Pages compiles into the server-side Functions bundle instead
+  of deploying as a static asset — there is no public URL that serves this
+  file. The browser never receives more than the 3 nearest stops for a
+  single verified query.
+- `functions/api/nearest-stops.js` — the only code path that reads
+  `stops.json`. Verifies the request's Turnstile token via Cloudflare's
+  canonical `siteverify`, then returns just the 3 nearest stops for the
+  given school + coordinates.
 
-No backend or database server is required — everything runs in the
-browser. `bus-stops.json` acts as the "database."
+### Why the split
+
+Earlier versions of this site kept school + stop data together in one
+public `data/bus-stops.json`, fetched directly by the browser. That meant
+the entire stop roster (every family's possible pickup location) was
+sitting in a plain file anyone could open, in the browser network tab or
+directly in the public repo. Schools' names/addresses are public
+information regardless, but the bus stop roster is not something that
+should be enumerable by an unauthenticated visitor. Moving it behind
+`functions/api/nearest-stops.js` means a visitor's browser only ever sees
+the 3 stops relevant to their own query.
+
+This isn't a complete guarantee against determined scraping — someone
+could still query many different coordinates across the city to
+reconstruct most of the roster over time. Folding Turnstile verification
+into the same endpoint (each query burns one freshly-solved challenge,
+since Turnstile tokens are single-use) raises the cost of that
+significantly, but if this matters a lot for the real dataset, consider
+also adding rate limiting (e.g. Cloudflare's built-in rate limiting rules)
+on `/api/nearest-stops`.
 
 ### Data status: what's real vs. placeholder
 
-- **Schools are real.** The 7 schools in `data/bus-stops.json` use their
+- **Schools are real.** The 7 schools in `data/schools.json` use their
   actual names, addresses, and geocoded coordinates (looked up via web
   search and the Mapbox Geocoding API).
 - **Routes, stops, and times are synthetic demo data.** The 30 routes
-  (~20 stops each) use real New Orleans street names combined
+  (~8-20 stops each) use real New Orleans street names combined
   arbitrarily, plausible-looking pickup/drop-off times, and each route is
   assigned to exactly one school. None of this reflects an actual bus
-  roster — it exists only to demonstrate the app. Replace `stops` with
-  the real route roster before this goes live for families.
+  roster — it exists only to demonstrate the app. Replace
+  `functions/_data/stops.json` with the real route roster before this goes
+  live for families.
 
 ## Replacing the sample data
 
-Edit `data/bus-stops.json`. It has two top-level arrays:
-
-`schools` — one entry per school:
+`data/schools.json` — one entry per school:
 
 ```json
 {
@@ -47,9 +74,9 @@ Edit `data/bus-stops.json`. It has two top-level arrays:
 }
 ```
 
-`stops` — one entry per bus stop. `schoolId` must match a school's `id`
-above — each route serves exactly one school, so every stop on that route
-should carry the same `schoolId`:
+`functions/_data/stops.json` — one entry per bus stop. `schoolId` must
+match a school's `id` above — each route serves exactly one school, so
+every stop on that route should carry the same `schoolId`:
 
 ```json
 {
@@ -60,7 +87,8 @@ should carry the same `schoolId`:
   "lat": 29.9297,
   "lng": -90.0937,
   "amPickup": "6:45 AM",
-  "pmDropoff": "3:30 PM"
+  "pmDropoff": "3:30 PM",
+  "wedEarlyDismissal": "1:30 PM"
 }
 ```
 
@@ -70,7 +98,9 @@ address and copy the coordinates.
 
 If your bus roster lives in a spreadsheet, the easiest path is to export it
 to CSV and convert each row into an object in the `stops` array above (or
-ask for help converting it).
+ask for help converting it). Whatever you do, keep the file under
+`functions/_data/` — never move it back under `data/` or anywhere else
+that gets served as a static asset.
 
 ## Mapbox access token
 
@@ -128,20 +158,25 @@ repo.
 The search form requires completing a Cloudflare Turnstile challenge before
 "Find My Bus Stops" is enabled. The widget's site key is hardcoded in
 `index.html` (Turnstile site keys are meant to be public, unlike API
-tokens). It's registered to the `kipp-bus-stop-finder.pages.dev` domain
-only, so it will show a connection error on localhost or any other domain
-— that's expected, not a bug. If the domain ever changes, update the
-widget's allowed domains in the Cloudflare dashboard (Turnstile →
-this widget → Settings), or via the API.
+tokens). It's registered to the `hop.knos.pro` and
+`kipp-bus-stop-finder.pages.dev` domains — it will show a connection error
+on localhost or any other domain, which is expected, not a bug. If the
+domain ever changes, update the widget's allowed domains in the Cloudflare
+dashboard (Turnstile → this widget → Settings), or via the API.
 
-**Important limitation:** this is a fully static site with no backend, so
-there is nowhere to call Cloudflare's `siteverify` endpoint to cryptographically
-confirm a challenge response. This setup only gates the button client-side —
-it deters basic/naive bots but does not provide airtight verification. If
-real server-side verification is ever needed, it would require adding a
-small backend (e.g. a Cloudflare Worker) to verify the token before treating
-a request as legitimate. The Turnstile secret key is not stored in this
-repo; it's only in the Cloudflare dashboard for this widget.
+**Verification is real and server-side**, via
+`functions/api/nearest-stops.js`: the token from the widget is sent along
+with every search request and checked against Cloudflare's canonical
+`siteverify` endpoint before any stop data is touched. A request with a
+missing, invalid, or already-used token gets a 403 and no data. Because
+Turnstile tokens are single-use, the frontend calls `turnstile.reset()`
+after every search (success or failure) so the next search gets a fresh
+token.
+
+The secret key lives only as a Cloudflare Pages secret
+(`TURNSTILE_SECRET`, set via `wrangler pages secret put`) — it is never in
+this repo or sent to the browser. If you redeploy this to a new Pages
+project, you'll need to set that secret again for the new project.
 
 ## Notes / limitations
 

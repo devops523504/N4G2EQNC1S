@@ -1,56 +1,5 @@
 {
-  "_comment": "School names/addresses/coordinates are REAL (looked up and geocoded). Routes and pickup/drop-off times are SYNTHETIC DEMO DATA -- but each stop's crossStreets label and lat/lng were BOTH derived from geocoding that real intersection via the Mapbox Geocoding API, so the pin location matches the labeled cross streets. Replace the stops array with a real roster before launch. See README.md.",
-  "schools": [
-    {
-      "id": "btw",
-      "name": "Booker T. Washington High School",
-      "address": "1201 South Roman Street, New Orleans, LA 70125",
-      "lat": 29.949821,
-      "lng": -90.089078
-    },
-    {
-      "id": "jfk",
-      "name": "John F. Kennedy High School",
-      "address": "6026 Paris Ave, New Orleans, LA 70122",
-      "lat": 30.01899,
-      "lng": -90.076215
-    },
-    {
-      "id": "kipp-central-city",
-      "name": "KIPP Central City",
-      "address": "2514 Third Street, New Orleans, LA 70113",
-      "lat": 29.939595,
-      "lng": -90.090735
-    },
-    {
-      "id": "kipp-leadership",
-      "name": "KIPP Leadership",
-      "address": "2300 St. Claude Avenue, New Orleans, LA 70117",
-      "lat": 29.968327,
-      "lng": -90.053773
-    },
-    {
-      "id": "kipp-morial",
-      "name": "KIPP Morial",
-      "address": "7701 Grant Street, New Orleans, LA 70116",
-      "lat": 30.017591,
-      "lng": -89.99755
-    },
-    {
-      "id": "kipp-east",
-      "name": "KIPP East",
-      "address": "6519 Virgilian Street, New Orleans, LA 70126",
-      "lat": 30.020813,
-      "lng": -90.016313
-    },
-    {
-      "id": "kipp-believe",
-      "name": "KIPP Believe",
-      "address": "3815 Saint Bernard Avenue, New Orleans, LA 70122",
-      "lat": 29.996589,
-      "lng": -90.078862
-    }
-  ],
+  "_comment": "PRIVATE server-side data. Never expose this file as a static asset or fetch it directly from the browser -- it lives under functions/_data specifically so Cloudflare Pages does not serve it as a public file. Routes/times are SYNTHETIC DEMO DATA; crossStreets/lat/lng are real geocoded intersections. Replace with a real roster before launch.",
   "stops": [
     {
       "id": "R1-01",

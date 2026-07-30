@@ -1,0 +1,11 @@
+# Prevent any file under /data from ever getting a long edge-cache
+# lifetime. data/schools.json is intentionally public, but nothing here
+# should be cached for days -- if a file is ever removed or replaced here,
+# a stale cached copy should not linger.
+/data/*
+  Cache-Control: public, max-age=300, must-revalidate
+
+# Belt-and-suspenders: explicitly 404 the old public data file path in
+# case it's ever accidentally reintroduced by a future deploy.
+/data/bus-stops.json
+  Cache-Control: no-store

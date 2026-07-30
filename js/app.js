@@ -9,36 +9,37 @@
   const resultsHeading = document.getElementById("results-heading");
   const resultsList = document.getElementById("results-list");
 
-  let busData = null;
+  let schools = []; // public data only -- never the bus stop roster
   let selectedCoords = null; // { lat, lng, placeName }
   let selectedSchoolId = "";
   let debounceTimer = null;
   let map = null;
   let mapInitFailed = false;
   let resultMarkers = [];
-  let turnstileVerified = false;
+  let turnstileToken = null;
 
-  window.onTurnstileSuccess = function () {
-    turnstileVerified = true;
+  window.onTurnstileSuccess = function (token) {
+    turnstileToken = token;
     updateFindButtonState();
+    setStatus("");
   };
 
   window.onTurnstileExpired = function () {
-    turnstileVerified = false;
+    turnstileToken = null;
     updateFindButtonState();
   };
 
-  const MILES_PER_METER = 0.000621371;
   const NOLA_CENTER = { lat: 29.9700, lng: -90.0700 };
 
   init();
 
   async function init() {
     try {
-      const res = await fetch("data/bus-stops.json");
-      busData = await res.json();
+      const res = await fetch("data/schools.json");
+      const data = await res.json();
+      schools = data.schools;
     } catch (err) {
-      setStatus("Could not load bus stop data. Please try again later.", true);
+      setStatus("Could not load school data. Please try again later.", true);
       return;
     }
 
@@ -65,7 +66,7 @@
   }
 
   function populateSchoolSelect() {
-    busData.schools.forEach((school) => {
+    schools.forEach((school) => {
       const option = document.createElement("option");
       option.value = school.id;
       option.textContent = school.name;
@@ -198,10 +199,10 @@
   }
 
   function updateFindButtonState() {
-    findBtn.disabled = !(selectedCoords && selectedSchoolId && turnstileVerified);
+    findBtn.disabled = !(selectedCoords && selectedSchoolId && turnstileToken);
   }
 
-  function onFindStops() {
+  async function onFindStops() {
     if (!selectedSchoolId) {
       setStatus("Please select your child's school.", true);
       return;
@@ -210,31 +211,51 @@
       setStatus("Please choose an address from the suggestions list.", true);
       return;
     }
-    if (!turnstileVerified) {
+    if (!turnstileToken) {
       setStatus("Please complete the verification challenge.", true);
       return;
     }
 
-    const schoolStops = busData.stops.filter((s) => s.schoolId === selectedSchoolId);
+    findBtn.disabled = true;
+    setStatus("Searching...");
 
-    const ranked = schoolStops
-      .map((stop) => ({
-        ...stop,
-        distanceMiles: haversineMiles(
-          selectedCoords.lat,
-          selectedCoords.lng,
-          stop.lat,
-          stop.lng
-        ),
-      }))
-      .sort((a, b) => a.distanceMiles - b.distanceMiles)
-      .slice(0, 3);
+    let payload;
+    try {
+      const res = await fetch("/api/nearest-stops", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          token: turnstileToken,
+          schoolId: selectedSchoolId,
+          lat: selectedCoords.lat,
+          lng: selectedCoords.lng,
+        }),
+      });
+      payload = await res.json();
+      if (!res.ok) {
+        throw new Error(payload.error || "request_failed");
+      }
+    } catch (err) {
+      setStatus("Something went wrong verifying your request. Please try again.", true);
+      resetTurnstile();
+      return;
+    }
 
-    const school = busData.schools.find((s) => s.id === selectedSchoolId);
+    // Each token is single-use -- get a fresh one for the next search.
+    resetTurnstile();
 
-    renderResults(ranked, school);
-    updateResultsOnMap(ranked);
+    const school = schools.find((s) => s.id === selectedSchoolId);
+    renderResults(payload.stops, school);
+    updateResultsOnMap(payload.stops);
     setStatus("");
+  }
+
+  function resetTurnstile() {
+    turnstileToken = null;
+    updateFindButtonState();
+    if (window.turnstile) {
+      window.turnstile.reset();
+    }
   }
 
   function renderResults(stops, school) {
@@ -279,7 +300,7 @@
     resultMarkers.forEach((m) => m.remove());
     resultMarkers = [];
 
-    const school = busData.schools.find((s) => s.id === selectedSchoolId);
+    const school = schools.find((s) => s.id === selectedSchoolId);
     const bounds = new mapboxgl.LngLatBounds();
     if (school) {
       addSchoolMarker(school);
@@ -318,18 +339,6 @@
     });
 
     map.fitBounds(bounds, { padding: 60, maxZoom: 15 });
-  }
-
-  function haversineMiles(lat1, lon1, lat2, lon2) {
-    const R = 6371000; // meters
-    const toRad = (deg) => (deg * Math.PI) / 180;
-    const dLat = toRad(lat2 - lat1);
-    const dLon = toRad(lon2 - lon1);
-    const a =
-      Math.sin(dLat / 2) ** 2 +
-      Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLon / 2) ** 2;
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    return R * c * MILES_PER_METER;
   }
 
   function setStatus(message, isError) {
