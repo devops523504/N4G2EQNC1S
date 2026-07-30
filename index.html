@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Find Your Bus Stop</title>
 <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -18,14 +21,17 @@
       <circle cx="8" cy="9" r="0.9" fill="currentColor"/>
       <circle cx="16" cy="9" r="0.9" fill="currentColor"/>
     </svg>
-    <div>
-      <h1>Find Your Nearest Bus Stop</h1>
-      <p class="subtitle">Select your child's school and enter your home address to see the 3 closest bus stops, pickup times, and drop-off times.</p>
-    </div>
+    <h1>Hop on to KIPP!</h1>
   </div>
 </header>
 
 <main class="container">
+
+  <p class="footer-tip">
+    <strong>A friendly reminder:</strong> pickup and drop-off times are estimates and may shift slightly
+    as routes are finalized. We recommend families arrive at the stop a few minutes early, especially
+    during the first weeks of school, so no one misses the bus.
+  </p>
 
   <section class="search-panel" aria-label="Address search">
     <label for="school-select">School</label>
@@ -62,12 +68,11 @@
 </main>
 
 <footer class="site-footer">
-  <p class="footer-tip">
-    <strong>A friendly reminder:</strong> pickup and drop-off times are estimates and may shift slightly
-    as routes are finalized. We recommend families arrive at the stop a few minutes early, especially
-    during the first weeks of school, so no one misses the bus.
+  <p class="footer-tip footer-tip-info">
+    <strong>Please note:</strong> the stops shown here are not yet your child's permanent bus stop
+    assignment. Families will receive confirmation of their assigned pickup and drop-off stop later
+    this month, once routes are finalized for the school year.
   </p>
-  <p>Bus stop information shown is sample placeholder data for demonstration purposes only.</p>
 </footer>
 
 <script src="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.js"></script>

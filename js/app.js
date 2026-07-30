@@ -81,7 +81,7 @@
     busData.schools.forEach((school) => {
       const el = document.createElement("div");
       el.className = "school-marker";
-      el.textContent = "S";
+      el.innerHTML = `<img src="assets/kipp-logo.png" alt="${escapeHtml(school.name)}">`;
 
       const popupHtml = `
         <p class="popup-school-name">${escapeHtml(school.name)}</p>
@@ -231,16 +231,17 @@
 
     stops.forEach((stop, index) => {
       const stopNumber = index + 1;
+      const rankClass = `rank-${stopNumber}`;
       const card = document.createElement("article");
-      card.className = "stop-card";
+      card.className = `stop-card ${rankClass}`;
       card.innerHTML = `
         <div class="stop-card-header">
-          <span class="stop-number-badge">${stopNumber}</span>
+          <span class="stop-number-badge ${rankClass}">${stopNumber}</span>
           <h3>Stop #${stopNumber}</h3>
         </div>
         <span class="route-badge">${escapeHtml(stop.route)}</span>
         <p class="stop-location">${escapeHtml(stop.crossStreets)}</p>
-        <p class="stop-distance">${stop.distanceMiles.toFixed(2)} miles from your address (straight-line)</p>
+        <p class="stop-distance">${stop.distanceMiles.toFixed(2)} miles from your address</p>
         <dl class="stop-times">
           <dt>AM Pickup</dt><dd>${escapeHtml(stop.amPickup)}</dd>
           <dt>PM Drop-off</dt><dd>${escapeHtml(stop.pmDropoff)}</dd>
@@ -272,12 +273,13 @@
 
     stops.forEach((stop, index) => {
       const stopNumber = index + 1;
+      const rankClass = `rank-${stopNumber}`;
       const el = document.createElement("div");
-      el.className = "stop-marker";
+      el.className = `stop-marker ${rankClass}`;
       el.textContent = stopNumber;
 
       const popupHtml = `
-        <span class="popup-stop-badge">Stop #${stopNumber}</span>
+        <span class="popup-stop-badge ${rankClass}">Stop #${stopNumber}</span>
         <p class="popup-route">${escapeHtml(stop.route)}</p>
         <p class="popup-location">${escapeHtml(stop.crossStreets)}</p>
       `;

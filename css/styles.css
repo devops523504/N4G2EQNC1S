@@ -11,6 +11,14 @@
   --color-bg: #f5f7fa;
   --color-card: #ffffff;
   --radius: 8px;
+
+  /* Subway-style rank colors for the 3 nearest stops (#1/#2/#3) */
+  --color-rank-1: #fccc0a;
+  --color-rank-1-text: #1f2933;
+  --color-rank-2: #00933c;
+  --color-rank-2-text: #ffffff;
+  --color-rank-3: #0039a6;
+  --color-rank-3-text: #ffffff;
 }
 
 * {
@@ -19,7 +27,7 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background: var(--color-bg);
   color: var(--color-text);
 }
@@ -47,15 +55,9 @@ body {
 }
 
 .site-header h1 {
-  margin: 0 0 0.4rem;
+  margin: 0;
   font-size: 1.75rem;
   letter-spacing: -0.01em;
-}
-
-.subtitle {
-  margin: 0;
-  color: #cfd6dd;
-  font-size: 1rem;
 }
 
 .container {
@@ -202,6 +204,10 @@ body {
   background: var(--color-bg);
 }
 
+.stop-card.rank-1 { border-left-color: var(--color-rank-1); }
+.stop-card.rank-2 { border-left-color: var(--color-rank-2); }
+.stop-card.rank-3 { border-left-color: var(--color-rank-3); }
+
 .stop-card-header {
   display: flex;
   align-items: center;
@@ -222,6 +228,10 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+.stop-number-badge.rank-1 { background: var(--color-rank-1); color: var(--color-rank-1-text); }
+.stop-number-badge.rank-2 { background: var(--color-rank-2); color: var(--color-rank-2-text); }
+.stop-number-badge.rank-3 { background: var(--color-rank-3); color: var(--color-rank-3-text); }
 
 .stop-card h3 {
   margin: 0;
@@ -301,21 +311,33 @@ body {
   border-top-color: var(--color-accent);
 }
 
+.stop-marker.rank-1 { background: var(--color-rank-1); color: var(--color-rank-1-text); }
+.stop-marker.rank-1::after { border-top-color: var(--color-rank-1); }
+.stop-marker.rank-2 { background: var(--color-rank-2); color: var(--color-rank-2-text); }
+.stop-marker.rank-2::after { border-top-color: var(--color-rank-2); }
+.stop-marker.rank-3 { background: var(--color-rank-3); color: var(--color-rank-3-text); }
+.stop-marker.rank-3::after { border-top-color: var(--color-rank-3); }
+
 /* Permanent school pins */
 .school-marker {
-  width: 26px;
-  height: 26px;
-  border-radius: 6px;
-  background: var(--color-primary);
-  color: var(--color-accent);
-  font-weight: 700;
-  font-size: 0.85rem;
+  width: 36px;
+  height: 36px;
+  padding: 4px;
+  border-radius: 8px;
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid #fff;
+  border: 2px solid var(--color-primary);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
   cursor: pointer;
+}
+
+.school-marker img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .home-marker {
@@ -345,6 +367,10 @@ body {
   font-weight: 700;
   font-size: 0.78rem;
 }
+
+.popup-stop-badge.rank-1 { background: var(--color-rank-1); color: var(--color-rank-1-text); }
+.popup-stop-badge.rank-2 { background: var(--color-rank-2); color: var(--color-rank-2-text); }
+.popup-stop-badge.rank-3 { background: var(--color-rank-3); color: var(--color-rank-3-text); }
 
 .popup-route {
   margin: 0 0 0.15rem;
@@ -392,4 +418,12 @@ body {
 
 .footer-tip strong {
   color: var(--color-accent-dark);
+}
+
+.footer-tip.footer-tip-info {
+  background: #e4ecf7;
+}
+
+.footer-tip.footer-tip-info strong {
+  color: var(--color-primary);
 }
