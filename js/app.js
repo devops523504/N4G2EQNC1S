@@ -16,6 +16,17 @@
   let map = null;
   let mapInitFailed = false;
   let resultMarkers = [];
+  let turnstileVerified = false;
+
+  window.onTurnstileSuccess = function () {
+    turnstileVerified = true;
+    updateFindButtonState();
+  };
+
+  window.onTurnstileExpired = function () {
+    turnstileVerified = false;
+    updateFindButtonState();
+  };
 
   const MILES_PER_METER = 0.000621371;
   const NOLA_CENTER = { lat: 29.9700, lng: -90.0700 };
@@ -187,7 +198,7 @@
   }
 
   function updateFindButtonState() {
-    findBtn.disabled = !(selectedCoords && selectedSchoolId);
+    findBtn.disabled = !(selectedCoords && selectedSchoolId && turnstileVerified);
   }
 
   function onFindStops() {
@@ -197,6 +208,10 @@
     }
     if (!selectedCoords) {
       setStatus("Please choose an address from the suggestions list.", true);
+      return;
+    }
+    if (!turnstileVerified) {
+      setStatus("Please complete the verification challenge.", true);
       return;
     }
 

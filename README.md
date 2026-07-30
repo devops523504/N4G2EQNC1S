@@ -112,6 +112,24 @@ If deploying elsewhere (Netlify/Vercel/etc.), just make sure `js/config.js`
 exists with a real token before/at deploy time — it is not part of the
 repo.
 
+## Bot check (Cloudflare Turnstile)
+
+The search form requires completing a Cloudflare Turnstile challenge before
+"Find My Bus Stops" is enabled. The widget's site key is hardcoded in
+`index.html` (Turnstile site keys are meant to be public, unlike API
+tokens). It's registered to the `devops523504.github.io` domain only, so it
+will show a connection error on localhost or any other domain — that's
+expected, not a bug.
+
+**Important limitation:** this is a fully static site with no backend, so
+there is nowhere to call Cloudflare's `siteverify` endpoint to cryptographically
+confirm a challenge response. This setup only gates the button client-side —
+it deters basic/naive bots but does not provide airtight verification. If
+real server-side verification is ever needed, it would require adding a
+small backend (e.g. a Cloudflare Worker) to verify the token before treating
+a request as legitimate. The Turnstile secret key is not stored in this
+repo; it's only in the Cloudflare dashboard for this widget.
+
 ## Notes / limitations
 
 - Distance shown is straight-line ("as the crow flies") distance, not

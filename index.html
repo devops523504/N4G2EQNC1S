@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
 
@@ -52,6 +53,13 @@
       >
       <ul id="suggestions-list" class="suggestions-list" hidden></ul>
     </div>
+    <div
+      class="cf-turnstile"
+      data-sitekey="0x4AAAAAAECCNmnfUtLMTX80"
+      data-callback="onTurnstileSuccess"
+      data-expired-callback="onTurnstileExpired"
+      data-error-callback="onTurnstileExpired"
+    ></div>
     <button id="find-stops-btn" type="button" disabled>Find My Bus Stops</button>
     <p id="status-message" class="status-message" role="status"></p>
   </section>

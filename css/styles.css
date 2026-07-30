@@ -149,6 +149,10 @@ body {
   background: var(--color-accent-light);
 }
 
+.cf-turnstile {
+  margin-top: 0.85rem;
+}
+
 #find-stops-btn {
   width: 100%;
   margin-top: 0.85rem;
