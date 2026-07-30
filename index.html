@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Your Bus Stop</title>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.css">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <h1>Find Your Nearest Bus Stop</h1>
+  <p class="subtitle">Enter your home address to see the 3 closest bus stops, pickup times, and drop-off times.</p>
+</header>
+
+<main class="container">
+
+  <section class="search-panel" aria-label="Address search">
+    <label for="address-input">Home address</label>
+    <div class="autocomplete-wrapper">
+      <input
+        type="text"
+        id="address-input"
+        placeholder="Start typing your address..."
+        autocomplete="off"
+        aria-autocomplete="list"
+        aria-controls="suggestions-list"
+        aria-expanded="false"
+      >
+      <ul id="suggestions-list" class="suggestions-list" hidden></ul>
+    </div>
+    <button id="find-stops-btn" type="button" disabled>Find My Bus Stops</button>
+    <p id="status-message" class="status-message" role="status"></p>
+  </section>
+
+  <section class="results-panel" aria-label="Nearest bus stops">
+    <div id="results-list" class="results-list"></div>
+  </section>
+
+  <section class="map-panel" aria-label="Map of bus stops">
+    <div id="map"></div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>Bus stop information shown is sample placeholder data for demonstration purposes only.</p>
+</footer>
+
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.js"></script>
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

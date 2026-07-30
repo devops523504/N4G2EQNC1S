@@ -1,0 +1,2711 @@
+{
+  "_comment": "PLACEHOLDER / SAMPLE DATA ONLY. Cross streets are real New Orleans street names combined synthetically for demo purposes; they do not represent verified real bus stop locations. Replace with your real bus stop roster before launch. See README.md for the required schema.",
+  "school": {
+    "name": "Sample KIPP School (placeholder)",
+    "address": "123 Sample St, New Orleans, LA",
+    "lat": 29.933,
+    "lng": -90.087
+  },
+  "stops": [
+    {
+      "id": "R1-01",
+      "route": "Route 1",
+      "crossStreets": "Magazine St & St. Charles Ave",
+      "lat": 29.9408,
+      "lng": -90.10612,
+      "amPickup": "6:15 AM",
+      "pmDropoff": "3:05 PM"
+    },
+    {
+      "id": "R1-02",
+      "route": "Route 1",
+      "crossStreets": "Prytania St & Louisiana Ave",
+      "lat": 29.92546,
+      "lng": -90.09422,
+      "amPickup": "6:18 AM",
+      "pmDropoff": "3:08 PM"
+    },
+    {
+      "id": "R1-03",
+      "route": "Route 1",
+      "crossStreets": "Magazine St & Jefferson Ave",
+      "lat": 29.93313,
+      "lng": -90.11128,
+      "amPickup": "6:21 AM",
+      "pmDropoff": "3:11 PM"
+    },
+    {
+      "id": "R1-04",
+      "route": "Route 1",
+      "crossStreets": "Napoleon Ave & Magazine St",
+      "lat": 29.93513,
+      "lng": -90.11136,
+      "amPickup": "6:24 AM",
+      "pmDropoff": "3:14 PM"
+    },
+    {
+      "id": "R1-05",
+      "route": "Route 1",
+      "crossStreets": "Napoleon Ave & Louisiana Ave",
+      "lat": 29.9386,
+      "lng": -90.09892,
+      "amPickup": "6:27 AM",
+      "pmDropoff": "3:17 PM"
+    },
+    {
+      "id": "R1-06",
+      "route": "Route 1",
+      "crossStreets": "Napoleon Ave & State St",
+      "lat": 29.93714,
+      "lng": -90.09257,
+      "amPickup": "6:30 AM",
+      "pmDropoff": "3:20 PM"
+    },
+    {
+      "id": "R1-07",
+      "route": "Route 1",
+      "crossStreets": "St. Charles Ave & Nashville Ave",
+      "lat": 29.94234,
+      "lng": -90.09524,
+      "amPickup": "6:33 AM",
+      "pmDropoff": "3:23 PM"
+    },
+    {
+      "id": "R1-08",
+      "route": "Route 1",
+      "crossStreets": "Louisiana Ave & Prytania St",
+      "lat": 29.92673,
+      "lng": -90.08903,
+      "amPickup": "6:36 AM",
+      "pmDropoff": "3:26 PM"
+    },
+    {
+      "id": "R1-09",
+      "route": "Route 1",
+      "crossStreets": "Louisiana Ave & St. Charles Ave",
+      "lat": 29.92523,
+      "lng": -90.10968,
+      "amPickup": "6:39 AM",
+      "pmDropoff": "3:29 PM"
+    },
+    {
+      "id": "R1-10",
+      "route": "Route 1",
+      "crossStreets": "Louisiana Ave & Jefferson Ave",
+      "lat": 29.92935,
+      "lng": -90.11096,
+      "amPickup": "6:42 AM",
+      "pmDropoff": "3:32 PM"
+    },
+    {
+      "id": "R1-11",
+      "route": "Route 1",
+      "crossStreets": "State St & Jefferson Ave",
+      "lat": 29.926,
+      "lng": -90.08986,
+      "amPickup": "6:45 AM",
+      "pmDropoff": "3:35 PM"
+    },
+    {
+      "id": "R1-12",
+      "route": "Route 1",
+      "crossStreets": "Jefferson Ave & Nashville Ave",
+      "lat": 29.93809,
+      "lng": -90.09075,
+      "amPickup": "6:48 AM",
+      "pmDropoff": "3:38 PM"
+    },
+    {
+      "id": "R1-13",
+      "route": "Route 1",
+      "crossStreets": "Napoleon Ave & Nashville Ave",
+      "lat": 29.92995,
+      "lng": -90.11008,
+      "amPickup": "6:51 AM",
+      "pmDropoff": "3:41 PM"
+    },
+    {
+      "id": "R1-14",
+      "route": "Route 1",
+      "crossStreets": "Magazine St & Napoleon Ave",
+      "lat": 29.92967,
+      "lng": -90.09674,
+      "amPickup": "6:54 AM",
+      "pmDropoff": "3:44 PM"
+    },
+    {
+      "id": "R1-15",
+      "route": "Route 1",
+      "crossStreets": "Louisiana Ave & Magazine St",
+      "lat": 29.93188,
+      "lng": -90.10697,
+      "amPickup": "6:57 AM",
+      "pmDropoff": "3:47 PM"
+    },
+    {
+      "id": "R1-16",
+      "route": "Route 1",
+      "crossStreets": "Jefferson Ave & Louisiana Ave",
+      "lat": 29.94548,
+      "lng": -90.09645,
+      "amPickup": "7:00 AM",
+      "pmDropoff": "3:50 PM"
+    },
+    {
+      "id": "R1-17",
+      "route": "Route 1",
+      "crossStreets": "Prytania St & Jefferson Ave",
+      "lat": 29.9405,
+      "lng": -90.10808,
+      "amPickup": "7:03 AM",
+      "pmDropoff": "3:53 PM"
+    },
+    {
+      "id": "R1-18",
+      "route": "Route 1",
+      "crossStreets": "Nashville Ave & Prytania St",
+      "lat": 29.94675,
+      "lng": -90.09664,
+      "amPickup": "7:06 AM",
+      "pmDropoff": "3:56 PM"
+    },
+    {
+      "id": "R1-19",
+      "route": "Route 1",
+      "crossStreets": "Louisiana Ave & Nashville Ave",
+      "lat": 29.94144,
+      "lng": -90.11066,
+      "amPickup": "7:09 AM",
+      "pmDropoff": "3:59 PM"
+    },
+    {
+      "id": "R1-20",
+      "route": "Route 1",
+      "crossStreets": "Louisiana Ave & Napoleon Ave",
+      "lat": 29.92943,
+      "lng": -90.10694,
+      "amPickup": "7:12 AM",
+      "pmDropoff": "4:02 PM"
+    },
+    {
+      "id": "R2-01",
+      "route": "Route 2",
+      "crossStreets": "Danneel St & LaSalle St",
+      "lat": 29.93855,
+      "lng": -90.08327,
+      "amPickup": "6:15 AM",
+      "pmDropoff": "3:05 PM"
+    },
+    {
+      "id": "R2-02",
+      "route": "Route 2",
+      "crossStreets": "Washington Ave & LaSalle St",
+      "lat": 29.94201,
+      "lng": -90.09264,
+      "amPickup": "6:18 AM",
+      "pmDropoff": "3:08 PM"
+    },
+    {
+      "id": "R2-03",
+      "route": "Route 2",
+      "crossStreets": "MLK Jr Blvd & LaSalle St",
+      "lat": 29.94447,
+      "lng": -90.09269,
+      "amPickup": "6:21 AM",
+      "pmDropoff": "3:11 PM"
+    },
+    {
+      "id": "R2-04",
+      "route": "Route 2",
+      "crossStreets": "Danneel St & Washington Ave",
+      "lat": 29.95255,
+      "lng": -90.08941,
+      "amPickup": "6:24 AM",
+      "pmDropoff": "3:14 PM"
+    },
+    {
+      "id": "R2-05",
+      "route": "Route 2",
+      "crossStreets": "MLK Jr Blvd & Carondelet St",
+      "lat": 29.94323,
+      "lng": -90.09682,
+      "amPickup": "6:27 AM",
+      "pmDropoff": "3:17 PM"
+    },
+    {
+      "id": "R2-06",
+      "route": "Route 2",
+      "crossStreets": "OC Haley Blvd & Carondelet St",
+      "lat": 29.93467,
+      "lng": -90.09516,
+      "amPickup": "6:30 AM",
+      "pmDropoff": "3:20 PM"
+    },
+    {
+      "id": "R2-07",
+      "route": "Route 2",
+      "crossStreets": "LaSalle St & Washington Ave",
+      "lat": 29.94531,
+      "lng": -90.08977,
+      "amPickup": "6:33 AM",
+      "pmDropoff": "3:23 PM"
+    },
+    {
+      "id": "R2-08",
+      "route": "Route 2",
+      "crossStreets": "Danneel St & Third St",
+      "lat": 29.95431,
+      "lng": -90.07834,
+      "amPickup": "6:36 AM",
+      "pmDropoff": "3:26 PM"
+    },
+    {
+      "id": "R2-09",
+      "route": "Route 2",
+      "crossStreets": "OC Haley Blvd & LaSalle St",
+      "lat": 29.9483,
+      "lng": -90.08264,
+      "amPickup": "6:39 AM",
+      "pmDropoff": "3:29 PM"
+    },
+    {
+      "id": "R2-10",
+      "route": "Route 2",
+      "crossStreets": "Carondelet St & LaSalle St",
+      "lat": 29.93916,
+      "lng": -90.09196,
+      "amPickup": "6:42 AM",
+      "pmDropoff": "3:32 PM"
+    },
+    {
+      "id": "R2-11",
+      "route": "Route 2",
+      "crossStreets": "MLK Jr Blvd & Washington Ave",
+      "lat": 29.93108,
+      "lng": -90.08167,
+      "amPickup": "6:45 AM",
+      "pmDropoff": "3:35 PM"
+    },
+    {
+      "id": "R2-12",
+      "route": "Route 2",
+      "crossStreets": "LaSalle St & Third St",
+      "lat": 29.95433,
+      "lng": -90.08071,
+      "amPickup": "6:48 AM",
+      "pmDropoff": "3:38 PM"
+    },
+    {
+      "id": "R2-13",
+      "route": "Route 2",
+      "crossStreets": "Danneel St & OC Haley Blvd",
+      "lat": 29.95189,
+      "lng": -90.09184,
+      "amPickup": "6:51 AM",
+      "pmDropoff": "3:41 PM"
+    },
+    {
+      "id": "R2-14",
+      "route": "Route 2",
+      "crossStreets": "LaSalle St & Danneel St",
+      "lat": 29.94562,
+      "lng": -90.09533,
+      "amPickup": "6:54 AM",
+      "pmDropoff": "3:44 PM"
+    },
+    {
+      "id": "R2-15",
+      "route": "Route 2",
+      "crossStreets": "Carondelet St & MLK Jr Blvd",
+      "lat": 29.94395,
+      "lng": -90.08031,
+      "amPickup": "6:57 AM",
+      "pmDropoff": "3:47 PM"
+    },
+    {
+      "id": "R2-16",
+      "route": "Route 2",
+      "crossStreets": "Washington Ave & OC Haley Blvd",
+      "lat": 29.93368,
+      "lng": -90.09029,
+      "amPickup": "7:00 AM",
+      "pmDropoff": "3:50 PM"
+    },
+    {
+      "id": "R2-17",
+      "route": "Route 2",
+      "crossStreets": "Carondelet St & Third St",
+      "lat": 29.93675,
+      "lng": -90.09322,
+      "amPickup": "7:03 AM",
+      "pmDropoff": "3:53 PM"
+    },
+    {
+      "id": "R2-18",
+      "route": "Route 2",
+      "crossStreets": "Carondelet St & Danneel St",
+      "lat": 29.94938,
+      "lng": -90.09592,
+      "amPickup": "7:06 AM",
+      "pmDropoff": "3:56 PM"
+    },
+    {
+      "id": "R2-19",
+      "route": "Route 2",
+      "crossStreets": "Washington Ave & Danneel St",
+      "lat": 29.93496,
+      "lng": -90.08634,
+      "amPickup": "7:09 AM",
+      "pmDropoff": "3:59 PM"
+    },
+    {
+      "id": "R2-20",
+      "route": "Route 2",
+      "crossStreets": "MLK Jr Blvd & Danneel St",
+      "lat": 29.94913,
+      "lng": -90.08244,
+      "amPickup": "7:12 AM",
+      "pmDropoff": "4:02 PM"
+    },
+    {
+      "id": "R3-01",
+      "route": "Route 3",
+      "crossStreets": "First St & Chestnut St",
+      "lat": 29.92558,
+      "lng": -90.08088,
+      "amPickup": "6:15 AM",
+      "pmDropoff": "3:05 PM"
+    },
+    {
+      "id": "R3-02",
+      "route": "Route 3",
+      "crossStreets": "Chestnut St & Third St",
+      "lat": 29.93759,
+      "lng": -90.08616,
+      "amPickup": "6:18 AM",
+      "pmDropoff": "3:08 PM"
+    },
+    {
+      "id": "R3-03",
+      "route": "Route 3",
+      "crossStreets": "Coliseum St & Camp St",
+      "lat": 29.91754,
+      "lng": -90.0965,
+      "amPickup": "6:21 AM",
+      "pmDropoff": "3:11 PM"
+    },
+    {
+      "id": "R3-04",
+      "route": "Route 3",
+      "crossStreets": "Washington Ave & Coliseum St",
+      "lat": 29.93012,
+      "lng": -90.09683,
+      "amPickup": "6:24 AM",
+      "pmDropoff": "3:14 PM"
+    },
+    {
+      "id": "R3-05",
+      "route": "Route 3",
+      "crossStreets": "First St & Camp St",
+      "lat": 29.91741,
+      "lng": -90.09538,
+      "amPickup": "6:27 AM",
+      "pmDropoff": "3:17 PM"
+    },
+    {
+      "id": "R3-06",
+      "route": "Route 3",
+      "crossStreets": "Prytania St & Chestnut St",
+      "lat": 29.9177,
+      "lng": -90.09129,
+      "amPickup": "6:30 AM",
+      "pmDropoff": "3:20 PM"
+    },
+    {
+      "id": "R3-07",
+      "route": "Route 3",
+      "crossStreets": "First St & Third St",
+      "lat": 29.92114,
+      "lng": -90.09382,
+      "amPickup": "6:33 AM",
+      "pmDropoff": "3:23 PM"
+    },
+    {
+      "id": "R3-08",
+      "route": "Route 3",
+      "crossStreets": "Washington Ave & Camp St",
+      "lat": 29.92734,
+      "lng": -90.07817,
+      "amPickup": "6:36 AM",
+      "pmDropoff": "3:26 PM"
+    },
+    {
+      "id": "R3-09",
+      "route": "Route 3",
+      "crossStreets": "Camp St & Third St",
+      "lat": 29.92057,
+      "lng": -90.09467,
+      "amPickup": "6:39 AM",
+      "pmDropoff": "3:29 PM"
+    },
+    {
+      "id": "R3-10",
+      "route": "Route 3",
+      "crossStreets": "Third St & Chestnut St",
+      "lat": 29.92617,
+      "lng": -90.08579,
+      "amPickup": "6:42 AM",
+      "pmDropoff": "3:32 PM"
+    },
+    {
+      "id": "R3-11",
+      "route": "Route 3",
+      "crossStreets": "First St & Prytania St",
+      "lat": 29.93216,
+      "lng": -90.07338,
+      "amPickup": "6:45 AM",
+      "pmDropoff": "3:35 PM"
+    },
+    {
+      "id": "R3-12",
+      "route": "Route 3",
+      "crossStreets": "Prytania St & Camp St",
+      "lat": 29.92566,
+      "lng": -90.08886,
+      "amPickup": "6:48 AM",
+      "pmDropoff": "3:38 PM"
+    },
+    {
+      "id": "R3-13",
+      "route": "Route 3",
+      "crossStreets": "Camp St & Prytania St",
+      "lat": 29.92197,
+      "lng": -90.09243,
+      "amPickup": "6:51 AM",
+      "pmDropoff": "3:41 PM"
+    },
+    {
+      "id": "R3-14",
+      "route": "Route 3",
+      "crossStreets": "Third St & Coliseum St",
+      "lat": 29.92613,
+      "lng": -90.09031,
+      "amPickup": "6:54 AM",
+      "pmDropoff": "3:44 PM"
+    },
+    {
+      "id": "R3-15",
+      "route": "Route 3",
+      "crossStreets": "Coliseum St & Prytania St",
+      "lat": 29.92664,
+      "lng": -90.07633,
+      "amPickup": "6:57 AM",
+      "pmDropoff": "3:47 PM"
+    },
+    {
+      "id": "R3-16",
+      "route": "Route 3",
+      "crossStreets": "Washington Ave & Prytania St",
+      "lat": 29.91721,
+      "lng": -90.07302,
+      "amPickup": "7:00 AM",
+      "pmDropoff": "3:50 PM"
+    },
+    {
+      "id": "R3-17",
+      "route": "Route 3",
+      "crossStreets": "Prytania St & Coliseum St",
+      "lat": 29.91999,
+      "lng": -90.08534,
+      "amPickup": "7:03 AM",
+      "pmDropoff": "3:53 PM"
+    },
+    {
+      "id": "R3-18",
+      "route": "Route 3",
+      "crossStreets": "Coliseum St & Third St",
+      "lat": 29.93766,
+      "lng": -90.09305,
+      "amPickup": "7:06 AM",
+      "pmDropoff": "3:56 PM"
+    },
+    {
+      "id": "R3-19",
+      "route": "Route 3",
+      "crossStreets": "Prytania St & Third St",
+      "lat": 29.92236,
+      "lng": -90.07818,
+      "amPickup": "7:09 AM",
+      "pmDropoff": "3:59 PM"
+    },
+    {
+      "id": "R3-20",
+      "route": "Route 3",
+      "crossStreets": "Third St & First St",
+      "lat": 29.93898,
+      "lng": -90.07311,
+      "amPickup": "7:12 AM",
+      "pmDropoff": "4:02 PM"
+    },
+    {
+      "id": "R4-01",
+      "route": "Route 4",
+      "crossStreets": "Third St & Race St",
+      "lat": 29.91872,
+      "lng": -90.08488,
+      "amPickup": "6:15 AM",
+      "pmDropoff": "3:05 PM"
+    },
+    {
+      "id": "R4-02",
+      "route": "Route 4",
+      "crossStreets": "Tchoupitoulas St & Third St",
+      "lat": 29.93266,
+      "lng": -90.09054,
+      "amPickup": "6:18 AM",
+      "pmDropoff": "3:08 PM"
+    },
+    {
+      "id": "R4-03",
+      "route": "Route 4",
+      "crossStreets": "Annunciation St & Tchoupitoulas St",
+      "lat": 29.9162,
+      "lng": -90.08056,
+      "amPickup": "6:21 AM",
+      "pmDropoff": "3:11 PM"
+    },
+    {
+      "id": "R4-04",
+      "route": "Route 4",
+      "crossStreets": "Third St & Constance St",
+      "lat": 29.91637,
+      "lng": -90.07981,
+      "amPickup": "6:24 AM",
+      "pmDropoff": "3:14 PM"
+    },
+    {
+      "id": "R4-05",
+      "route": "Route 4",
+      "crossStreets": "Constance St & Tchoupitoulas St",
+      "lat": 29.92928,
+      "lng": -90.07579,
+      "amPickup": "6:27 AM",
+      "pmDropoff": "3:17 PM"
+    },
+    {
+      "id": "R4-06",
+      "route": "Route 4",
+      "crossStreets": "Constance St & Race St",
+      "lat": 29.91788,
+      "lng": -90.07063,
+      "amPickup": "6:30 AM",
+      "pmDropoff": "3:20 PM"
+    },
+    {
+      "id": "R4-07",
+      "route": "Route 4",
+      "crossStreets": "Constance St & Third St",
+      "lat": 29.92927,
+      "lng": -90.07713,
+      "amPickup": "6:33 AM",
+      "pmDropoff": "3:23 PM"
+    },
+    {
+      "id": "R4-08",
+      "route": "Route 4",
+      "crossStreets": "Race St & Third St",
+      "lat": 29.92857,
+      "lng": -90.08441,
+      "amPickup": "6:36 AM",
+      "pmDropoff": "3:26 PM"
+    },
+    {
+      "id": "R4-09",
+      "route": "Route 4",
+      "crossStreets": "Annunciation St & Constance St",
+      "lat": 29.93107,
+      "lng": -90.08446,
+      "amPickup": "6:39 AM",
+      "pmDropoff": "3:29 PM"
+    },
+    {
+      "id": "R4-10",
+      "route": "Route 4",
+      "crossStreets": "Annunciation St & Race St",
+      "lat": 29.91814,
+      "lng": -90.07651,
+      "amPickup": "6:42 AM",
+      "pmDropoff": "3:32 PM"
+    },
+    {
+      "id": "R4-11",
+      "route": "Route 4",
+      "crossStreets": "Race St & Annunciation St",
+      "lat": 29.9373,
+      "lng": -90.06954,
+      "amPickup": "6:45 AM",
+      "pmDropoff": "3:35 PM"
+    },
+    {
+      "id": "R4-12",
+      "route": "Route 4",
+      "crossStreets": "Tchoupitoulas St & Race St",
+      "lat": 29.92991,
+      "lng": -90.07849,
+      "amPickup": "6:48 AM",
+      "pmDropoff": "3:38 PM"
+    },
+    {
+      "id": "R4-13",
+      "route": "Route 4",
+      "crossStreets": "Tchoupitoulas St & Josephine St",
+      "lat": 29.9279,
+      "lng": -90.07986,
+      "amPickup": "6:51 AM",
+      "pmDropoff": "3:41 PM"
+    },
+    {
+      "id": "R4-14",
+      "route": "Route 4",
+      "crossStreets": "Constance St & Annunciation St",
+      "lat": 29.93614,
+      "lng": -90.0709,
+      "amPickup": "6:54 AM",
+      "pmDropoff": "3:44 PM"
+    },
+    {
+      "id": "R4-15",
+      "route": "Route 4",
+      "crossStreets": "Annunciation St & Josephine St",
+      "lat": 29.91879,
+      "lng": -90.07199,
+      "amPickup": "6:57 AM",
+      "pmDropoff": "3:47 PM"
+    },
+    {
+      "id": "R4-16",
+      "route": "Route 4",
+      "crossStreets": "Josephine St & Annunciation St",
+      "lat": 29.92968,
+      "lng": -90.06831,
+      "amPickup": "7:00 AM",
+      "pmDropoff": "3:50 PM"
+    },
+    {
+      "id": "R4-17",
+      "route": "Route 4",
+      "crossStreets": "Josephine St & Third St",
+      "lat": 29.91519,
+      "lng": -90.07239,
+      "amPickup": "7:03 AM",
+      "pmDropoff": "3:53 PM"
+    },
+    {
+      "id": "R4-18",
+      "route": "Route 4",
+      "crossStreets": "Annunciation St & Third St",
+      "lat": 29.92006,
+      "lng": -90.08377,
+      "amPickup": "7:06 AM",
+      "pmDropoff": "3:56 PM"
+    },
+    {
+      "id": "R4-19",
+      "route": "Route 4",
+      "crossStreets": "Tchoupitoulas St & Annunciation St",
+      "lat": 29.93351,
+      "lng": -90.07671,
+      "amPickup": "7:09 AM",
+      "pmDropoff": "3:59 PM"
+    },
+    {
+      "id": "R4-20",
+      "route": "Route 4",
+      "crossStreets": "Josephine St & Race St",
+      "lat": 29.92824,
+      "lng": -90.08174,
+      "amPickup": "7:12 AM",
+      "pmDropoff": "4:02 PM"
+    },
+    {
+      "id": "R5-01",
+      "route": "Route 5",
+      "crossStreets": "Bourbon St & Toulouse St",
+      "lat": 29.94821,
+      "lng": -90.05521,
+      "amPickup": "6:15 AM",
+      "pmDropoff": "3:05 PM"
+    },
+    {
+      "id": "R5-02",
+      "route": "Route 5",
+      "crossStreets": "Royal St & Dumaine St",
+      "lat": 29.94726,
+      "lng": -90.06754,
+      "amPickup": "6:18 AM",
+      "pmDropoff": "3:08 PM"
+    },
+    {
+      "id": "R5-03",
+      "route": "Route 5",
+      "crossStreets": "Dumaine St & Royal St",
+      "lat": 29.95671,
+      "lng": -90.0754,
+      "amPickup": "6:21 AM",
+      "pmDropoff": "3:11 PM"
+    },
+    {
+      "id": "R5-04",
+      "route": "Route 5",
+      "crossStreets": "Chartres St & Bourbon St",
+      "lat": 29.96797,
+      "lng": -90.07136,
+      "amPickup": "6:24 AM",
+      "pmDropoff": "3:14 PM"
+    },
+    {
+      "id": "R5-05",
+      "route": "Route 5",
+      "crossStreets": "Royal St & St. Ann St",
+      "lat": 29.94887,
+      "lng": -90.05768,
+      "amPickup": "6:27 AM",
+      "pmDropoff": "3:17 PM"
+    },
+    {
+      "id": "R5-06",
+      "route": "Route 5",
+      "crossStreets": "Toulouse St & Decatur St",
+      "lat": 29.96977,
+      "lng": -90.05841,
+      "amPickup": "6:30 AM",
+      "pmDropoff": "3:20 PM"
+    },
+    {
+      "id": "R5-07",
+      "route": "Route 5",
+      "crossStreets": "Royal St & Toulouse St",
+      "lat": 29.96983,
+      "lng": -90.05694,
+      "amPickup": "6:33 AM",
+      "pmDropoff": "3:23 PM"
+    },
+    {
+      "id": "R5-08",
+      "route": "Route 5",
+      "crossStreets": "Decatur St & Bourbon St",
+      "lat": 29.9507,
+      "lng": -90.05421,
+      "amPickup": "6:36 AM",
+      "pmDropoff": "3:26 PM"
+    },
+    {
+      "id": "R5-09",
+      "route": "Route 5",
+      "crossStreets": "Toulouse St & St. Ann St",
+      "lat": 29.96714,
+      "lng": -90.05694,
+      "amPickup": "6:39 AM",
+      "pmDropoff": "3:29 PM"
+    },
+    {
+      "id": "R5-10",
+      "route": "Route 5",
+      "crossStreets": "Chartres St & Royal St",
+      "lat": 29.9653,
+      "lng": -90.07381,
+      "amPickup": "6:42 AM",
+      "pmDropoff": "3:32 PM"
+    },
+    {
+      "id": "R5-11",
+      "route": "Route 5",
+      "crossStreets": "Toulouse St & Bourbon St",
+      "lat": 29.96701,
+      "lng": -90.07106,
+      "amPickup": "6:45 AM",
+      "pmDropoff": "3:35 PM"
+    },
+    {
+      "id": "R5-12",
+      "route": "Route 5",
+      "crossStreets": "Chartres St & Toulouse St",
+      "lat": 29.96609,
+      "lng": -90.05549,
+      "amPickup": "6:48 AM",
+      "pmDropoff": "3:38 PM"
+    },
+    {
+      "id": "R5-13",
+      "route": "Route 5",
+      "crossStreets": "Royal St & Bourbon St",
+      "lat": 29.96224,
+      "lng": -90.06684,
+      "amPickup": "6:51 AM",
+      "pmDropoff": "3:41 PM"
+    },
+    {
+      "id": "R5-14",
+      "route": "Route 5",
+      "crossStreets": "Toulouse St & Chartres St",
+      "lat": 29.95483,
+      "lng": -90.06417,
+      "amPickup": "6:54 AM",
+      "pmDropoff": "3:44 PM"
+    },
+    {
+      "id": "R5-15",
+      "route": "Route 5",
+      "crossStreets": "St. Ann St & Dumaine St",
+      "lat": 29.95435,
+      "lng": -90.07574,
+      "amPickup": "6:57 AM",
+      "pmDropoff": "3:47 PM"
+    },
+    {
+      "id": "R5-16",
+      "route": "Route 5",
+      "crossStreets": "Dumaine St & Chartres St",
+      "lat": 29.94732,
+      "lng": -90.06208,
+      "amPickup": "7:00 AM",
+      "pmDropoff": "3:50 PM"
+    },
+    {
+      "id": "R5-17",
+      "route": "Route 5",
+      "crossStreets": "Chartres St & St. Ann St",
+      "lat": 29.96527,
+      "lng": -90.06593,
+      "amPickup": "7:03 AM",
+      "pmDropoff": "3:53 PM"
+    },
+    {
+      "id": "R5-18",
+      "route": "Route 5",
+      "crossStreets": "Dumaine St & Bourbon St",
+      "lat": 29.95564,
+      "lng": -90.06256,
+      "amPickup": "7:06 AM",
+      "pmDropoff": "3:56 PM"
+    },
+    {
+      "id": "R5-19",
+      "route": "Route 5",
+      "crossStreets": "St. Ann St & Decatur St",
+      "lat": 29.94644,
+      "lng": -90.05419,
+      "amPickup": "7:09 AM",
+      "pmDropoff": "3:59 PM"
+    },
+    {
+      "id": "R5-20",
+      "route": "Route 5",
+      "crossStreets": "Dumaine St & St. Ann St",
+      "lat": 29.96367,
+      "lng": -90.05859,
+      "amPickup": "7:12 AM",
+      "pmDropoff": "4:02 PM"
+    },
+    {
+      "id": "R6-01",
+      "route": "Route 6",
+      "crossStreets": "Press St & St. Claude Ave",
+      "lat": 29.96074,
+      "lng": -90.05732,
+      "amPickup": "6:15 AM",
+      "pmDropoff": "3:05 PM"
+    },
+    {
+      "id": "R6-02",
+      "route": "Route 6",
+      "crossStreets": "Press St & Chartres St",
+      "lat": 29.96696,
+      "lng": -90.04308,
+      "amPickup": "6:18 AM",
+      "pmDropoff": "3:08 PM"
+    },
+    {
+      "id": "R6-03",
+      "route": "Route 6",
+      "crossStreets": "Franklin Ave & Press St",
+      "lat": 29.9736,
+      "lng": -90.04683,
+      "amPickup": "6:21 AM",
+      "pmDropoff": "3:11 PM"
+    },
+    {
+      "id": "R6-04",
+      "route": "Route 6",
+      "crossStreets": "Press St & Royal St",
+      "lat": 29.95983,
+      "lng": -90.04227,
+      "amPickup": "6:24 AM",
+      "pmDropoff": "3:14 PM"
+    },
+    {
+      "id": "R6-05",
+      "route": "Route 6",
+      "crossStreets": "Piety St & St. Claude Ave",
+      "lat": 29.9566,
+      "lng": -90.04304,
+      "amPickup": "6:27 AM",
+      "pmDropoff": "3:17 PM"
+    },
+    {
+      "id": "R6-06",
+      "route": "Route 6",
+      "crossStreets": "Royal St & Press St",
+      "lat": 29.96996,
+      "lng": -90.05482,
+      "amPickup": "6:30 AM",
+      "pmDropoff": "3:20 PM"
+    },
+    {
+      "id": "R6-07",
+      "route": "Route 6",
+      "crossStreets": "Piety St & Chartres St",
+      "lat": 29.96175,
+      "lng": -90.03899,
+      "amPickup": "6:33 AM",
+      "pmDropoff": "3:23 PM"
+    },
+    {
+      "id": "R6-08",
+      "route": "Route 6",
+      "crossStreets": "Chartres St & Dauphine St",
+      "lat": 29.95704,
+      "lng": -90.04014,
+      "amPickup": "6:36 AM",
+      "pmDropoff": "3:26 PM"
+    },
+    {
+      "id": "R6-09",
+      "route": "Route 6",
+      "crossStreets": "Piety St & Press St",
+      "lat": 29.95973,
+      "lng": -90.0484,
+      "amPickup": "6:39 AM",
+      "pmDropoff": "3:29 PM"
+    },
+    {
+      "id": "R6-10",
+      "route": "Route 6",
+      "crossStreets": "Piety St & Royal St",
+      "lat": 29.97105,
+      "lng": -90.03596,
+      "amPickup": "6:42 AM",
+      "pmDropoff": "3:32 PM"
+    },
+    {
+      "id": "R6-11",
+      "route": "Route 6",
+      "crossStreets": "Press St & Franklin Ave",
+      "lat": 29.95881,
+      "lng": -90.04307,
+      "amPickup": "6:45 AM",
+      "pmDropoff": "3:35 PM"
+    },
+    {
+      "id": "R6-12",
+      "route": "Route 6",
+      "crossStreets": "Franklin Ave & St. Claude Ave",
+      "lat": 29.96815,
+      "lng": -90.05361,
+      "amPickup": "6:48 AM",
+      "pmDropoff": "3:38 PM"
+    },
+    {
+      "id": "R6-13",
+      "route": "Route 6",
+      "crossStreets": "St. Claude Ave & Dauphine St",
+      "lat": 29.95259,
+      "lng": -90.05312,
+      "amPickup": "6:51 AM",
+      "pmDropoff": "3:41 PM"
+    },
+    {
+      "id": "R6-14",
+      "route": "Route 6",
+      "crossStreets": "Royal St & Piety St",
+      "lat": 29.97239,
+      "lng": -90.05725,
+      "amPickup": "6:54 AM",
+      "pmDropoff": "3:44 PM"
+    },
+    {
+      "id": "R6-15",
+      "route": "Route 6",
+      "crossStreets": "Press St & Dauphine St",
+      "lat": 29.96122,
+      "lng": -90.04941,
+      "amPickup": "6:57 AM",
+      "pmDropoff": "3:47 PM"
+    },
+    {
+      "id": "R6-16",
+      "route": "Route 6",
+      "crossStreets": "St. Claude Ave & Press St",
+      "lat": 29.9685,
+      "lng": -90.03758,
+      "amPickup": "7:00 AM",
+      "pmDropoff": "3:50 PM"
+    },
+    {
+      "id": "R6-17",
+      "route": "Route 6",
+      "crossStreets": "Dauphine St & Franklin Ave",
+      "lat": 29.97068,
+      "lng": -90.05375,
+      "amPickup": "7:03 AM",
+      "pmDropoff": "3:53 PM"
+    },
+    {
+      "id": "R6-18",
+      "route": "Route 6",
+      "crossStreets": "Dauphine St & Press St",
+      "lat": 29.96443,
+      "lng": -90.05779,
+      "amPickup": "7:06 AM",
+      "pmDropoff": "3:56 PM"
+    },
+    {
+      "id": "R6-19",
+      "route": "Route 6",
+      "crossStreets": "St. Claude Ave & Franklin Ave",
+      "lat": 29.96296,
+      "lng": -90.03977,
+      "amPickup": "7:09 AM",
+      "pmDropoff": "3:59 PM"
+    },
+    {
+      "id": "R6-20",
+      "route": "Route 6",
+      "crossStreets": "Press St & Piety St",
+      "lat": 29.97571,
+      "lng": -90.04471,
+      "amPickup": "7:12 AM",
+      "pmDropoff": "4:02 PM"
+    },
+    {
+      "id": "R7-01",
+      "route": "Route 7",
+      "crossStreets": "Bayou Rd & Tulane Ave",
+      "lat": 29.9697,
+      "lng": -90.07974,
+      "amPickup": "6:15 AM",
+      "pmDropoff": "3:05 PM"
+    },
+    {
+      "id": "R7-02",
+      "route": "Route 7",
+      "crossStreets": "S Jefferson Davis Pkwy & Tulane Ave",
+      "lat": 29.97493,
+      "lng": -90.08385,
+      "amPickup": "6:18 AM",
+      "pmDropoff": "3:08 PM"
+    },
+    {
+      "id": "R7-03",
+      "route": "Route 7",
+      "crossStreets": "N Carrollton Ave & Orleans Ave",
+      "lat": 29.97568,
+      "lng": -90.0862,
+      "amPickup": "6:21 AM",
+      "pmDropoff": "3:11 PM"
+    },
+    {
+      "id": "R7-04",
+      "route": "Route 7",
+      "crossStreets": "Bayou Rd & N Carrollton Ave",
+      "lat": 29.97516,
+      "lng": -90.09034,
+      "amPickup": "6:24 AM",
+      "pmDropoff": "3:14 PM"
+    },
+    {
+      "id": "R7-05",
+      "route": "Route 7",
+      "crossStreets": "Bayou Rd & S Jefferson Davis Pkwy",
+      "lat": 29.96663,
+      "lng": -90.09126,
+      "amPickup": "6:27 AM",
+      "pmDropoff": "3:17 PM"
+    },
+    {
+      "id": "R7-06",
+      "route": "Route 7",
+      "crossStreets": "Tulane Ave & Canal St",
+      "lat": 29.97213,
+      "lng": -90.09137,
+      "amPickup": "6:30 AM",
+      "pmDropoff": "3:20 PM"
+    },
+    {
+      "id": "R7-07",
+      "route": "Route 7",
+      "crossStreets": "Bienville St & Bayou Rd",
+      "lat": 29.97643,
+      "lng": -90.09507,
+      "amPickup": "6:33 AM",
+      "pmDropoff": "3:23 PM"
+    },
+    {
+      "id": "R7-08",
+      "route": "Route 7",
+      "crossStreets": "N Carrollton Ave & Bayou Rd",
+      "lat": 29.96419,
+      "lng": -90.09333,
+      "amPickup": "6:36 AM",
+      "pmDropoff": "3:26 PM"
+    },
+    {
+      "id": "R7-09",
+      "route": "Route 7",
+      "crossStreets": "N Carrollton Ave & Canal St",
+      "lat": 29.96496,
+      "lng": -90.08906,
+      "amPickup": "6:39 AM",
+      "pmDropoff": "3:29 PM"
+    },
+    {
+      "id": "R7-10",
+      "route": "Route 7",
+      "crossStreets": "Tulane Ave & Bayou Rd",
+      "lat": 29.95649,
+      "lng": -90.07701,
+      "amPickup": "6:42 AM",
+      "pmDropoff": "3:32 PM"
+    },
+    {
+      "id": "R7-11",
+      "route": "Route 7",
+      "crossStreets": "Tulane Ave & S Jefferson Davis Pkwy",
+      "lat": 29.97771,
+      "lng": -90.09653,
+      "amPickup": "6:45 AM",
+      "pmDropoff": "3:35 PM"
+    },
+    {
+      "id": "R7-12",
+      "route": "Route 7",
+      "crossStreets": "Canal St & Bienville St",
+      "lat": 29.96217,
+      "lng": -90.08764,
+      "amPickup": "6:48 AM",
+      "pmDropoff": "3:38 PM"
+    },
+    {
+      "id": "R7-13",
+      "route": "Route 7",
+      "crossStreets": "S Jefferson Davis Pkwy & Orleans Ave",
+      "lat": 29.97263,
+      "lng": -90.0778,
+      "amPickup": "6:51 AM",
+      "pmDropoff": "3:41 PM"
+    },
+    {
+      "id": "R7-14",
+      "route": "Route 7",
+      "crossStreets": "N Carrollton Ave & Tulane Ave",
+      "lat": 29.96027,
+      "lng": -90.08654,
+      "amPickup": "6:54 AM",
+      "pmDropoff": "3:44 PM"
+    },
+    {
+      "id": "R7-15",
+      "route": "Route 7",
+      "crossStreets": "Canal St & Tulane Ave",
+      "lat": 29.96307,
+      "lng": -90.0807,
+      "amPickup": "6:57 AM",
+      "pmDropoff": "3:47 PM"
+    },
+    {
+      "id": "R7-16",
+      "route": "Route 7",
+      "crossStreets": "Tulane Ave & Orleans Ave",
+      "lat": 29.95896,
+      "lng": -90.08578,
+      "amPickup": "7:00 AM",
+      "pmDropoff": "3:50 PM"
+    },
+    {
+      "id": "R7-17",
+      "route": "Route 7",
+      "crossStreets": "N Carrollton Ave & S Jefferson Davis Pkwy",
+      "lat": 29.96782,
+      "lng": -90.07523,
+      "amPickup": "7:03 AM",
+      "pmDropoff": "3:53 PM"
+    },
+    {
+      "id": "R7-18",
+      "route": "Route 7",
+      "crossStreets": "S Jefferson Davis Pkwy & Bayou Rd",
+      "lat": 29.97091,
+      "lng": -90.09499,
+      "amPickup": "7:06 AM",
+      "pmDropoff": "3:56 PM"
+    },
+    {
+      "id": "R7-19",
+      "route": "Route 7",
+      "crossStreets": "Tulane Ave & N Carrollton Ave",
+      "lat": 29.9758,
+      "lng": -90.09264,
+      "amPickup": "7:09 AM",
+      "pmDropoff": "3:59 PM"
+    },
+    {
+      "id": "R7-20",
+      "route": "Route 7",
+      "crossStreets": "Bienville St & Tulane Ave",
+      "lat": 29.96286,
+      "lng": -90.08609,
+      "amPickup": "7:12 AM",
+      "pmDropoff": "4:02 PM"
+    },
+    {
+      "id": "R8-01",
+      "route": "Route 8",
+      "crossStreets": "General Pershing St & Fontainebleau Dr",
+      "lat": 29.93968,
+      "lng": -90.08917,
+      "amPickup": "6:15 AM",
+      "pmDropoff": "3:05 PM"
+    },
+    {
+      "id": "R8-02",
+      "route": "Route 8",
+      "crossStreets": "Fontainebleau Dr & General Pershing St",
+      "lat": 29.95304,
+      "lng": -90.10071,
+      "amPickup": "6:18 AM",
+      "pmDropoff": "3:08 PM"
+    },
+    {
+      "id": "R8-03",
+      "route": "Route 8",
+      "crossStreets": "Gen Taylor St & Nashville Ave",
+      "lat": 29.93425,
+      "lng": -90.08915,
+      "amPickup": "6:21 AM",
+      "pmDropoff": "3:11 PM"
+    },
+    {
+      "id": "R8-04",
+      "route": "Route 8",
+      "crossStreets": "Napoleon Ave & S Broad St",
+      "lat": 29.95175,
+      "lng": -90.09636,
+      "amPickup": "6:24 AM",
+      "pmDropoff": "3:14 PM"
+    },
+    {
+      "id": "R8-05",
+      "route": "Route 8",
+      "crossStreets": "S Broad St & Napoleon Ave",
+      "lat": 29.93778,
+      "lng": -90.11151,
+      "amPickup": "6:27 AM",
+      "pmDropoff": "3:17 PM"
+    },
+    {
+      "id": "R8-06",
+      "route": "Route 8",
+      "crossStreets": "Napoleon Ave & Gen Taylor St",
+      "lat": 29.93603,
+      "lng": -90.09593,
+      "amPickup": "6:30 AM",
+      "pmDropoff": "3:20 PM"
+    },
+    {
+      "id": "R8-07",
+      "route": "Route 8",
+      "crossStreets": "Nashville Ave & Napoleon Ave",
+      "lat": 29.94416,
+      "lng": -90.10585,
+      "amPickup": "6:33 AM",
+      "pmDropoff": "3:23 PM"
+    },
+    {
+      "id": "R8-08",
+      "route": "Route 8",
+      "crossStreets": "General Pershing St & Napoleon Ave",
+      "lat": 29.94754,
+      "lng": -90.08887,
+      "amPickup": "6:36 AM",
+      "pmDropoff": "3:26 PM"
+    },
+    {
+      "id": "R8-09",
+      "route": "Route 8",
+      "crossStreets": "Gen Taylor St & S Broad St",
+      "lat": 29.95167,
+      "lng": -90.10807,
+      "amPickup": "6:39 AM",
+      "pmDropoff": "3:29 PM"
+    },
+    {
+      "id": "R8-10",
+      "route": "Route 8",
+      "crossStreets": "General Pershing St & S Broad St",
+      "lat": 29.94689,
+      "lng": -90.08971,
+      "amPickup": "6:42 AM",
+      "pmDropoff": "3:32 PM"
+    },
+    {
+      "id": "R8-11",
+      "route": "Route 8",
+      "crossStreets": "Nashville Ave & Fontainebleau Dr",
+      "lat": 29.94252,
+      "lng": -90.09484,
+      "amPickup": "6:45 AM",
+      "pmDropoff": "3:35 PM"
+    },
+    {
+      "id": "R8-12",
+      "route": "Route 8",
+      "crossStreets": "S Broad St & Nashville Ave",
+      "lat": 29.94957,
+      "lng": -90.09695,
+      "amPickup": "6:48 AM",
+      "pmDropoff": "3:38 PM"
+    },
+    {
+      "id": "R8-13",
+      "route": "Route 8",
+      "crossStreets": "S Broad St & General Pershing St",
+      "lat": 29.95341,
+      "lng": -90.09759,
+      "amPickup": "6:51 AM",
+      "pmDropoff": "3:41 PM"
+    },
+    {
+      "id": "R8-14",
+      "route": "Route 8",
+      "crossStreets": "Gen Taylor St & General Pershing St",
+      "lat": 29.93465,
+      "lng": -90.09646,
+      "amPickup": "6:54 AM",
+      "pmDropoff": "3:44 PM"
+    },
+    {
+      "id": "R8-15",
+      "route": "Route 8",
+      "crossStreets": "S Broad St & Fontainebleau Dr",
+      "lat": 29.95274,
+      "lng": -90.10947,
+      "amPickup": "6:57 AM",
+      "pmDropoff": "3:47 PM"
+    },
+    {
+      "id": "R8-16",
+      "route": "Route 8",
+      "crossStreets": "Gen Taylor St & Napoleon Ave",
+      "lat": 29.94345,
+      "lng": -90.09439,
+      "amPickup": "7:00 AM",
+      "pmDropoff": "3:50 PM"
+    },
+    {
+      "id": "R8-17",
+      "route": "Route 8",
+      "crossStreets": "Nashville Ave & Gen Taylor St",
+      "lat": 29.95159,
+      "lng": -90.10084,
+      "amPickup": "7:03 AM",
+      "pmDropoff": "3:53 PM"
+    },
+    {
+      "id": "R8-18",
+      "route": "Route 8",
+      "crossStreets": "General Pershing St & Gen Taylor St",
+      "lat": 29.95344,
+      "lng": -90.09206,
+      "amPickup": "7:06 AM",
+      "pmDropoff": "3:56 PM"
+    },
+    {
+      "id": "R8-19",
+      "route": "Route 8",
+      "crossStreets": "Fontainebleau Dr & Napoleon Ave",
+      "lat": 29.95101,
+      "lng": -90.09832,
+      "amPickup": "7:09 AM",
+      "pmDropoff": "3:59 PM"
+    },
+    {
+      "id": "R8-20",
+      "route": "Route 8",
+      "crossStreets": "Gen Taylor St & Fontainebleau Dr",
+      "lat": 29.94107,
+      "lng": -90.10014,
+      "amPickup": "7:12 AM",
+      "pmDropoff": "4:02 PM"
+    },
+    {
+      "id": "R9-01",
+      "route": "Route 9",
+      "crossStreets": "Jefferson Ave & Napoleon Ave",
+      "lat": 29.9327,
+      "lng": -90.11148,
+      "amPickup": "6:15 AM",
+      "pmDropoff": "3:05 PM"
+    },
+    {
+      "id": "R9-02",
+      "route": "Route 9",
+      "crossStreets": "Jefferson Ave & Robert St",
+      "lat": 29.92771,
+      "lng": -90.10569,
+      "amPickup": "6:18 AM",
+      "pmDropoff": "3:08 PM"
+    },
+    {
+      "id": "R9-03",
+      "route": "Route 9",
+      "crossStreets": "Jefferson Ave & Freret St",
+      "lat": 29.9334,
+      "lng": -90.11541,
+      "amPickup": "6:21 AM",
+      "pmDropoff": "3:11 PM"
+    },
+    {
+      "id": "R9-04",
+      "route": "Route 9",
+      "crossStreets": "Napoleon Ave & S Claiborne Ave",
+      "lat": 29.93273,
+      "lng": -90.1018,
+      "amPickup": "6:24 AM",
+      "pmDropoff": "3:14 PM"
+    },
+    {
+      "id": "R9-05",
+      "route": "Route 9",
+      "crossStreets": "S Claiborne Ave & Robert St",
+      "lat": 29.93176,
+      "lng": -90.11959,
+      "amPickup": "6:27 AM",
+      "pmDropoff": "3:17 PM"
+    },
+    {
+      "id": "R9-06",
+      "route": "Route 9",
+      "crossStreets": "S Claiborne Ave & Napoleon Ave",
+      "lat": 29.92835,
+      "lng": -90.10604,
+      "amPickup": "6:30 AM",
+      "pmDropoff": "3:20 PM"
+    },
+    {
+      "id": "R9-07",
+      "route": "Route 9",
+      "crossStreets": "S Claiborne Ave & Jefferson Ave",
+      "lat": 29.93121,
+      "lng": -90.1021,
+      "amPickup": "6:33 AM",
+      "pmDropoff": "3:23 PM"
+    },
+    {
+      "id": "R9-08",
+      "route": "Route 9",
+      "crossStreets": "Napoleon Ave & Freret St",
+      "lat": 29.93831,
+      "lng": -90.11243,
+      "amPickup": "6:36 AM",
+      "pmDropoff": "3:26 PM"
+    },
+    {
+      "id": "R9-09",
+      "route": "Route 9",
+      "crossStreets": "Robert St & Napoleon Ave",
+      "lat": 29.9256,
+      "lng": -90.10227,
+      "amPickup": "6:39 AM",
+      "pmDropoff": "3:29 PM"
+    },
+    {
+      "id": "R9-10",
+      "route": "Route 9",
+      "crossStreets": "Freret St & Napoleon Ave",
+      "lat": 29.92811,
+      "lng": -90.11134,
+      "amPickup": "6:42 AM",
+      "pmDropoff": "3:32 PM"
+    },
+    {
+      "id": "R9-11",
+      "route": "Route 9",
+      "crossStreets": "Freret St & Jefferson Ave",
+      "lat": 29.93774,
+      "lng": -90.11697,
+      "amPickup": "6:45 AM",
+      "pmDropoff": "3:35 PM"
+    },
+    {
+      "id": "R9-12",
+      "route": "Route 9",
+      "crossStreets": "S Claiborne Ave & Freret St",
+      "lat": 29.94195,
+      "lng": -90.10622,
+      "amPickup": "6:48 AM",
+      "pmDropoff": "3:38 PM"
+    },
+    {
+      "id": "R9-13",
+      "route": "Route 9",
+      "crossStreets": "Jefferson Ave & S Claiborne Ave",
+      "lat": 29.92374,
+      "lng": -90.11843,
+      "amPickup": "6:51 AM",
+      "pmDropoff": "3:41 PM"
+    },
+    {
+      "id": "R9-14",
+      "route": "Route 9",
+      "crossStreets": "Robert St & Freret St",
+      "lat": 29.92464,
+      "lng": -90.10053,
+      "amPickup": "6:54 AM",
+      "pmDropoff": "3:44 PM"
+    },
+    {
+      "id": "R9-15",
+      "route": "Route 9",
+      "crossStreets": "Robert St & S Claiborne Ave",
+      "lat": 29.93555,
+      "lng": -90.10102,
+      "amPickup": "6:57 AM",
+      "pmDropoff": "3:47 PM"
+    },
+    {
+      "id": "R9-16",
+      "route": "Route 9",
+      "crossStreets": "Napoleon Ave & Robert St",
+      "lat": 29.92735,
+      "lng": -90.11805,
+      "amPickup": "7:00 AM",
+      "pmDropoff": "3:50 PM"
+    },
+    {
+      "id": "R9-17",
+      "route": "Route 9",
+      "crossStreets": "Napoleon Ave & Jefferson Ave",
+      "lat": 29.93797,
+      "lng": -90.10313,
+      "amPickup": "7:03 AM",
+      "pmDropoff": "3:53 PM"
+    },
+    {
+      "id": "R9-18",
+      "route": "Route 9",
+      "crossStreets": "Robert St & Jefferson Ave",
+      "lat": 29.92162,
+      "lng": -90.11451,
+      "amPickup": "7:06 AM",
+      "pmDropoff": "3:56 PM"
+    },
+    {
+      "id": "R9-19",
+      "route": "Route 9",
+      "crossStreets": "Freret St & S Claiborne Ave",
+      "lat": 29.94373,
+      "lng": -90.10445,
+      "amPickup": "7:09 AM",
+      "pmDropoff": "3:59 PM"
+    },
+    {
+      "id": "R9-20",
+      "route": "Route 9",
+      "crossStreets": "Freret St & Robert St",
+      "lat": 29.92878,
+      "lng": -90.11865,
+      "amPickup": "7:12 AM",
+      "pmDropoff": "4:02 PM"
+    },
+    {
+      "id": "R10-01",
+      "route": "Route 10",
+      "crossStreets": "Maple St & Hampson St",
+      "lat": 29.94334,
+      "lng": -90.13114,
+      "amPickup": "6:15 AM",
+      "pmDropoff": "3:05 PM"
+    },
+    {
+      "id": "R10-02",
+      "route": "Route 10",
+      "crossStreets": "Willow St & Dublin St",
+      "lat": 29.94936,
+      "lng": -90.13268,
+      "amPickup": "6:18 AM",
+      "pmDropoff": "3:08 PM"
+    },
+    {
+      "id": "R10-03",
+      "route": "Route 10",
+      "crossStreets": "S Carrollton Ave & Oak St",
+      "lat": 29.94763,
+      "lng": -90.12782,
+      "amPickup": "6:21 AM",
+      "pmDropoff": "3:11 PM"
+    },
+    {
+      "id": "R10-04",
+      "route": "Route 10",
+      "crossStreets": "Hampson St & S Carrollton Ave",
+      "lat": 29.94494,
+      "lng": -90.123,
+      "amPickup": "6:24 AM",
+      "pmDropoff": "3:14 PM"
+    },
+    {
+      "id": "R10-05",
+      "route": "Route 10",
+      "crossStreets": "S Carrollton Ave & Willow St",
+      "lat": 29.94831,
+      "lng": -90.12597,
+      "amPickup": "6:27 AM",
+      "pmDropoff": "3:17 PM"
+    },
+    {
+      "id": "R10-06",
+      "route": "Route 10",
+      "crossStreets": "Hampson St & Oak St",
+      "lat": 29.95457,
+      "lng": -90.12583,
+      "amPickup": "6:30 AM",
+      "pmDropoff": "3:20 PM"
+    },
+    {
+      "id": "R10-07",
+      "route": "Route 10",
+      "crossStreets": "Maple St & Dublin St",
+      "lat": 29.93679,
+      "lng": -90.1264,
+      "amPickup": "6:33 AM",
+      "pmDropoff": "3:23 PM"
+    },
+    {
+      "id": "R10-08",
+      "route": "Route 10",
+      "crossStreets": "Maple St & Willow St",
+      "lat": 29.94957,
+      "lng": -90.12604,
+      "amPickup": "6:36 AM",
+      "pmDropoff": "3:26 PM"
+    },
+    {
+      "id": "R10-09",
+      "route": "Route 10",
+      "crossStreets": "Maple St & S Carrollton Ave",
+      "lat": 29.95698,
+      "lng": -90.11652,
+      "amPickup": "6:39 AM",
+      "pmDropoff": "3:29 PM"
+    },
+    {
+      "id": "R10-10",
+      "route": "Route 10",
+      "crossStreets": "Oak St & S Carrollton Ave",
+      "lat": 29.94215,
+      "lng": -90.12838,
+      "amPickup": "6:42 AM",
+      "pmDropoff": "3:32 PM"
+    },
+    {
+      "id": "R10-11",
+      "route": "Route 10",
+      "crossStreets": "Oak St & Willow St",
+      "lat": 29.93959,
+      "lng": -90.12342,
+      "amPickup": "6:45 AM",
+      "pmDropoff": "3:35 PM"
+    },
+    {
+      "id": "R10-12",
+      "route": "Route 10",
+      "crossStreets": "Dublin St & Willow St",
+      "lat": 29.95299,
+      "lng": -90.11533,
+      "amPickup": "6:48 AM",
+      "pmDropoff": "3:38 PM"
+    },
+    {
+      "id": "R10-13",
+      "route": "Route 10",
+      "crossStreets": "S Carrollton Ave & Dublin St",
+      "lat": 29.95225,
+      "lng": -90.13174,
+      "amPickup": "6:51 AM",
+      "pmDropoff": "3:41 PM"
+    },
+    {
+      "id": "R10-14",
+      "route": "Route 10",
+      "crossStreets": "Oak St & Dublin St",
+      "lat": 29.94176,
+      "lng": -90.13385,
+      "amPickup": "6:54 AM",
+      "pmDropoff": "3:44 PM"
+    },
+    {
+      "id": "R10-15",
+      "route": "Route 10",
+      "crossStreets": "Hampson St & Willow St",
+      "lat": 29.93722,
+      "lng": -90.13383,
+      "amPickup": "6:57 AM",
+      "pmDropoff": "3:47 PM"
+    },
+    {
+      "id": "R10-16",
+      "route": "Route 10",
+      "crossStreets": "Dublin St & Maple St",
+      "lat": 29.94574,
+      "lng": -90.11508,
+      "amPickup": "7:00 AM",
+      "pmDropoff": "3:50 PM"
+    },
+    {
+      "id": "R10-17",
+      "route": "Route 10",
+      "crossStreets": "S Carrollton Ave & Maple St",
+      "lat": 29.95494,
+      "lng": -90.11434,
+      "amPickup": "7:03 AM",
+      "pmDropoff": "3:53 PM"
+    },
+    {
+      "id": "R10-18",
+      "route": "Route 10",
+      "crossStreets": "Oak St & Maple St",
+      "lat": 29.94588,
+      "lng": -90.12609,
+      "amPickup": "7:06 AM",
+      "pmDropoff": "3:56 PM"
+    },
+    {
+      "id": "R10-19",
+      "route": "Route 10",
+      "crossStreets": "Hampson St & Maple St",
+      "lat": 29.94703,
+      "lng": -90.11726,
+      "amPickup": "7:09 AM",
+      "pmDropoff": "3:59 PM"
+    },
+    {
+      "id": "R10-20",
+      "route": "Route 10",
+      "crossStreets": "Maple St & Oak St",
+      "lat": 29.9492,
+      "lng": -90.12568,
+      "amPickup": "7:12 AM",
+      "pmDropoff": "4:02 PM"
+    },
+    {
+      "id": "R11-01",
+      "route": "Route 11",
+      "crossStreets": "Bellaire Dr & Vicksburg St",
+      "lat": 30.00087,
+      "lng": -90.10536,
+      "amPickup": "6:15 AM",
+      "pmDropoff": "3:05 PM"
+    },
+    {
+      "id": "R11-02",
+      "route": "Route 11",
+      "crossStreets": "Vicksburg St & Harrison Ave",
+      "lat": 30.00825,
+      "lng": -90.10886,
+      "amPickup": "6:18 AM",
+      "pmDropoff": "3:08 PM"
+    },
+    {
+      "id": "R11-03",
+      "route": "Route 11",
+      "crossStreets": "Vicksburg St & Marconi Dr",
+      "lat": 30.00858,
+      "lng": -90.1172,
+      "amPickup": "6:21 AM",
+      "pmDropoff": "3:11 PM"
+    },
+    {
+      "id": "R11-04",
+      "route": "Route 11",
+      "crossStreets": "Harrison Ave & Vicksburg St",
+      "lat": 30.0003,
+      "lng": -90.10818,
+      "amPickup": "6:24 AM",
+      "pmDropoff": "3:14 PM"
+    },
+    {
+      "id": "R11-05",
+      "route": "Route 11",
+      "crossStreets": "Harrison Ave & Fleur De Lis Dr",
+      "lat": 30.01429,
+      "lng": -90.11674,
+      "amPickup": "6:27 AM",
+      "pmDropoff": "3:17 PM"
+    },
+    {
+      "id": "R11-06",
+      "route": "Route 11",
+      "crossStreets": "Canal Blvd & Marconi Dr",
+      "lat": 30.00909,
+      "lng": -90.10216,
+      "amPickup": "6:30 AM",
+      "pmDropoff": "3:20 PM"
+    },
+    {
+      "id": "R11-07",
+      "route": "Route 11",
+      "crossStreets": "Bellaire Dr & Canal Blvd",
+      "lat": 30.0071,
+      "lng": -90.10256,
+      "amPickup": "6:33 AM",
+      "pmDropoff": "3:23 PM"
+    },
+    {
+      "id": "R11-08",
+      "route": "Route 11",
+      "crossStreets": "Canal Blvd & Harrison Ave",
+      "lat": 30.01301,
+      "lng": -90.10522,
+      "amPickup": "6:36 AM",
+      "pmDropoff": "3:26 PM"
+    },
+    {
+      "id": "R11-09",
+      "route": "Route 11",
+      "crossStreets": "Marconi Dr & Harrison Ave",
+      "lat": 30.00957,
+      "lng": -90.11479,
+      "amPickup": "6:39 AM",
+      "pmDropoff": "3:29 PM"
+    },
+    {
+      "id": "R11-10",
+      "route": "Route 11",
+      "crossStreets": "Canal Blvd & Fleur De Lis Dr",
+      "lat": 30.01353,
+      "lng": -90.11762,
+      "amPickup": "6:42 AM",
+      "pmDropoff": "3:32 PM"
+    },
+    {
+      "id": "R11-11",
+      "route": "Route 11",
+      "crossStreets": "Bellaire Dr & Marconi Dr",
+      "lat": 29.99445,
+      "lng": -90.11338,
+      "amPickup": "6:45 AM",
+      "pmDropoff": "3:35 PM"
+    },
+    {
+      "id": "R11-12",
+      "route": "Route 11",
+      "crossStreets": "Harrison Ave & Canal Blvd",
+      "lat": 29.9952,
+      "lng": -90.11491,
+      "amPickup": "6:48 AM",
+      "pmDropoff": "3:38 PM"
+    },
+    {
+      "id": "R11-13",
+      "route": "Route 11",
+      "crossStreets": "Vicksburg St & Bellaire Dr",
+      "lat": 30.01631,
+      "lng": -90.11879,
+      "amPickup": "6:51 AM",
+      "pmDropoff": "3:41 PM"
+    },
+    {
+      "id": "R11-14",
+      "route": "Route 11",
+      "crossStreets": "Marconi Dr & Fleur De Lis Dr",
+      "lat": 30.01673,
+      "lng": -90.10111,
+      "amPickup": "6:54 AM",
+      "pmDropoff": "3:44 PM"
+    },
+    {
+      "id": "R11-15",
+      "route": "Route 11",
+      "crossStreets": "Fleur De Lis Dr & Harrison Ave",
+      "lat": 30.01292,
+      "lng": -90.1067,
+      "amPickup": "6:57 AM",
+      "pmDropoff": "3:47 PM"
+    },
+    {
+      "id": "R11-16",
+      "route": "Route 11",
+      "crossStreets": "Bellaire Dr & Fleur De Lis Dr",
+      "lat": 30.01251,
+      "lng": -90.11441,
+      "amPickup": "7:00 AM",
+      "pmDropoff": "3:50 PM"
+    },
+    {
+      "id": "R11-17",
+      "route": "Route 11",
+      "crossStreets": "Fleur De Lis Dr & Bellaire Dr",
+      "lat": 29.99307,
+      "lng": -90.0994,
+      "amPickup": "7:03 AM",
+      "pmDropoff": "3:53 PM"
+    },
+    {
+      "id": "R11-18",
+      "route": "Route 11",
+      "crossStreets": "Fleur De Lis Dr & Vicksburg St",
+      "lat": 30.00597,
+      "lng": -90.10084,
+      "amPickup": "7:06 AM",
+      "pmDropoff": "3:56 PM"
+    },
+    {
+      "id": "R11-19",
+      "route": "Route 11",
+      "crossStreets": "Fleur De Lis Dr & Canal Blvd",
+      "lat": 30.00563,
+      "lng": -90.1021,
+      "amPickup": "7:09 AM",
+      "pmDropoff": "3:59 PM"
+    },
+    {
+      "id": "R11-20",
+      "route": "Route 11",
+      "crossStreets": "Canal Blvd & Vicksburg St",
+      "lat": 30.01167,
+      "lng": -90.10768,
+      "amPickup": "7:12 AM",
+      "pmDropoff": "4:02 PM"
+    },
+    {
+      "id": "R12-01",
+      "route": "Route 12",
+      "crossStreets": "Gentilly Blvd & St. Bernard Ave",
+      "lat": 29.98709,
+      "lng": -90.05131,
+      "amPickup": "6:15 AM",
+      "pmDropoff": "3:05 PM"
+    },
+    {
+      "id": "R12-02",
+      "route": "Route 12",
+      "crossStreets": "Gentilly Blvd & Mirabeau Ave",
+      "lat": 29.98224,
+      "lng": -90.05856,
+      "amPickup": "6:18 AM",
+      "pmDropoff": "3:08 PM"
+    },
+    {
+      "id": "R12-03",
+      "route": "Route 12",
+      "crossStreets": "Gentilly Blvd & Paris Ave",
+      "lat": 29.99897,
+      "lng": -90.05366,
+      "amPickup": "6:21 AM",
+      "pmDropoff": "3:11 PM"
+    },
+    {
+      "id": "R12-04",
+      "route": "Route 12",
+      "crossStreets": "St. Bernard Ave & Gentilly Blvd",
+      "lat": 29.98677,
+      "lng": -90.05217,
+      "amPickup": "6:24 AM",
+      "pmDropoff": "3:14 PM"
+    },
+    {
+      "id": "R12-05",
+      "route": "Route 12",
+      "crossStreets": "Elysian Fields Ave & Mirabeau Ave",
+      "lat": 29.97856,
+      "lng": -90.07097,
+      "amPickup": "6:27 AM",
+      "pmDropoff": "3:17 PM"
+    },
+    {
+      "id": "R12-06",
+      "route": "Route 12",
+      "crossStreets": "Mirabeau Ave & Paris Ave",
+      "lat": 29.98816,
+      "lng": -90.0662,
+      "amPickup": "6:30 AM",
+      "pmDropoff": "3:20 PM"
+    },
+    {
+      "id": "R12-07",
+      "route": "Route 12",
+      "crossStreets": "Elysian Fields Ave & St. Bernard Ave",
+      "lat": 29.98713,
+      "lng": -90.06368,
+      "amPickup": "6:33 AM",
+      "pmDropoff": "3:23 PM"
+    },
+    {
+      "id": "R12-08",
+      "route": "Route 12",
+      "crossStreets": "Paris Ave & Gentilly Blvd",
+      "lat": 29.99547,
+      "lng": -90.05838,
+      "amPickup": "6:36 AM",
+      "pmDropoff": "3:26 PM"
+    },
+    {
+      "id": "R12-09",
+      "route": "Route 12",
+      "crossStreets": "Mirabeau Ave & Franklin Ave",
+      "lat": 29.98532,
+      "lng": -90.05269,
+      "amPickup": "6:39 AM",
+      "pmDropoff": "3:29 PM"
+    },
+    {
+      "id": "R12-10",
+      "route": "Route 12",
+      "crossStreets": "St. Bernard Ave & Elysian Fields Ave",
+      "lat": 29.99486,
+      "lng": -90.06443,
+      "amPickup": "6:42 AM",
+      "pmDropoff": "3:32 PM"
+    },
+    {
+      "id": "R12-11",
+      "route": "Route 12",
+      "crossStreets": "Elysian Fields Ave & Paris Ave",
+      "lat": 29.98398,
+      "lng": -90.07034,
+      "amPickup": "6:45 AM",
+      "pmDropoff": "3:35 PM"
+    },
+    {
+      "id": "R12-12",
+      "route": "Route 12",
+      "crossStreets": "Gentilly Blvd & Elysian Fields Ave",
+      "lat": 29.99448,
+      "lng": -90.06065,
+      "amPickup": "6:48 AM",
+      "pmDropoff": "3:38 PM"
+    },
+    {
+      "id": "R12-13",
+      "route": "Route 12",
+      "crossStreets": "Mirabeau Ave & Elysian Fields Ave",
+      "lat": 29.99108,
+      "lng": -90.06414,
+      "amPickup": "6:51 AM",
+      "pmDropoff": "3:41 PM"
+    },
+    {
+      "id": "R12-14",
+      "route": "Route 12",
+      "crossStreets": "Paris Ave & St. Bernard Ave",
+      "lat": 29.99583,
+      "lng": -90.05669,
+      "amPickup": "6:54 AM",
+      "pmDropoff": "3:44 PM"
+    },
+    {
+      "id": "R12-15",
+      "route": "Route 12",
+      "crossStreets": "Franklin Ave & St. Bernard Ave",
+      "lat": 29.98038,
+      "lng": -90.0714,
+      "amPickup": "6:57 AM",
+      "pmDropoff": "3:47 PM"
+    },
+    {
+      "id": "R12-16",
+      "route": "Route 12",
+      "crossStreets": "St. Bernard Ave & Mirabeau Ave",
+      "lat": 29.99839,
+      "lng": -90.05436,
+      "amPickup": "7:00 AM",
+      "pmDropoff": "3:50 PM"
+    },
+    {
+      "id": "R12-17",
+      "route": "Route 12",
+      "crossStreets": "Paris Ave & Elysian Fields Ave",
+      "lat": 29.97569,
+      "lng": -90.06744,
+      "amPickup": "7:03 AM",
+      "pmDropoff": "3:53 PM"
+    },
+    {
+      "id": "R12-18",
+      "route": "Route 12",
+      "crossStreets": "Elysian Fields Ave & Gentilly Blvd",
+      "lat": 29.97935,
+      "lng": -90.07056,
+      "amPickup": "7:06 AM",
+      "pmDropoff": "3:56 PM"
+    },
+    {
+      "id": "R12-19",
+      "route": "Route 12",
+      "crossStreets": "Gentilly Blvd & Franklin Ave",
+      "lat": 29.99278,
+      "lng": -90.05068,
+      "amPickup": "7:09 AM",
+      "pmDropoff": "3:59 PM"
+    },
+    {
+      "id": "R12-20",
+      "route": "Route 12",
+      "crossStreets": "St. Bernard Ave & Paris Ave",
+      "lat": 29.98318,
+      "lng": -90.06512,
+      "amPickup": "7:12 AM",
+      "pmDropoff": "4:02 PM"
+    },
+    {
+      "id": "R13-01",
+      "route": "Route 13",
+      "crossStreets": "Michoud Blvd & Read Blvd",
+      "lat": 30.03164,
+      "lng": -89.96838,
+      "amPickup": "6:15 AM",
+      "pmDropoff": "3:05 PM"
+    },
+    {
+      "id": "R13-02",
+      "route": "Route 13",
+      "crossStreets": "Chef Menteur Hwy & Michoud Blvd",
+      "lat": 30.01673,
+      "lng": -89.96389,
+      "amPickup": "6:18 AM",
+      "pmDropoff": "3:08 PM"
+    },
+    {
+      "id": "R13-03",
+      "route": "Route 13",
+      "crossStreets": "Read Blvd & Crowder Blvd",
+      "lat": 30.02889,
+      "lng": -89.97034,
+      "amPickup": "6:21 AM",
+      "pmDropoff": "3:11 PM"
+    },
+    {
+      "id": "R13-04",
+      "route": "Route 13",
+      "crossStreets": "Crowder Blvd & Michoud Blvd",
+      "lat": 30.01956,
+      "lng": -89.96388,
+      "amPickup": "6:24 AM",
+      "pmDropoff": "3:14 PM"
+    },
+    {
+      "id": "R13-05",
+      "route": "Route 13",
+      "crossStreets": "Chef Menteur Hwy & Read Blvd",
+      "lat": 30.02332,
+      "lng": -89.9752,
+      "amPickup": "6:27 AM",
+      "pmDropoff": "3:17 PM"
+    },
+    {
+      "id": "R13-06",
+      "route": "Route 13",
+      "crossStreets": "Michoud Blvd & Bullard Ave",
+      "lat": 30.02468,
+      "lng": -89.96599,
+      "amPickup": "6:30 AM",
+      "pmDropoff": "3:20 PM"
+    },
+    {
+      "id": "R13-07",
+      "route": "Route 13",
+      "crossStreets": "Chef Menteur Hwy & Downman Rd",
+      "lat": 30.02249,
+      "lng": -89.96762,
+      "amPickup": "6:33 AM",
+      "pmDropoff": "3:23 PM"
+    },
+    {
+      "id": "R13-08",
+      "route": "Route 13",
+      "crossStreets": "Read Blvd & Downman Rd",
+      "lat": 30.03142,
+      "lng": -89.96366,
+      "amPickup": "6:36 AM",
+      "pmDropoff": "3:26 PM"
+    },
+    {
+      "id": "R13-09",
+      "route": "Route 13",
+      "crossStreets": "Read Blvd & Michoud Blvd",
+      "lat": 30.01588,
+      "lng": -89.97006,
+      "amPickup": "6:39 AM",
+      "pmDropoff": "3:29 PM"
+    },
+    {
+      "id": "R13-10",
+      "route": "Route 13",
+      "crossStreets": "Crowder Blvd & Downman Rd",
+      "lat": 30.0161,
+      "lng": -89.96922,
+      "amPickup": "6:42 AM",
+      "pmDropoff": "3:32 PM"
+    },
+    {
+      "id": "R13-11",
+      "route": "Route 13",
+      "crossStreets": "Downman Rd & Bullard Ave",
+      "lat": 30.02641,
+      "lng": -89.96597,
+      "amPickup": "6:45 AM",
+      "pmDropoff": "3:35 PM"
+    },
+    {
+      "id": "R13-12",
+      "route": "Route 13",
+      "crossStreets": "Read Blvd & Chef Menteur Hwy",
+      "lat": 30.02253,
+      "lng": -89.96419,
+      "amPickup": "6:48 AM",
+      "pmDropoff": "3:38 PM"
+    },
+    {
+      "id": "R13-13",
+      "route": "Route 13",
+      "crossStreets": "Crowder Blvd & Chef Menteur Hwy",
+      "lat": 30.02403,
+      "lng": -89.98013,
+      "amPickup": "6:51 AM",
+      "pmDropoff": "3:41 PM"
+    },
+    {
+      "id": "R13-14",
+      "route": "Route 13",
+      "crossStreets": "Read Blvd & Bullard Ave",
+      "lat": 30.0233,
+      "lng": -89.97229,
+      "amPickup": "6:54 AM",
+      "pmDropoff": "3:44 PM"
+    },
+    {
+      "id": "R13-15",
+      "route": "Route 13",
+      "crossStreets": "Michoud Blvd & Crowder Blvd",
+      "lat": 30.01995,
+      "lng": -89.97228,
+      "amPickup": "6:57 AM",
+      "pmDropoff": "3:47 PM"
+    },
+    {
+      "id": "R13-16",
+      "route": "Route 13",
+      "crossStreets": "Bullard Ave & Crowder Blvd",
+      "lat": 30.03297,
+      "lng": -89.95993,
+      "amPickup": "7:00 AM",
+      "pmDropoff": "3:50 PM"
+    },
+    {
+      "id": "R13-17",
+      "route": "Route 13",
+      "crossStreets": "Chef Menteur Hwy & Crowder Blvd",
+      "lat": 30.03327,
+      "lng": -89.97616,
+      "amPickup": "7:03 AM",
+      "pmDropoff": "3:53 PM"
+    },
+    {
+      "id": "R13-18",
+      "route": "Route 13",
+      "crossStreets": "Bullard Ave & Chef Menteur Hwy",
+      "lat": 30.0225,
+      "lng": -89.97455,
+      "amPickup": "7:06 AM",
+      "pmDropoff": "3:56 PM"
+    },
+    {
+      "id": "R13-19",
+      "route": "Route 13",
+      "crossStreets": "Chef Menteur Hwy & Bullard Ave",
+      "lat": 30.0282,
+      "lng": -89.96927,
+      "amPickup": "7:09 AM",
+      "pmDropoff": "3:59 PM"
+    },
+    {
+      "id": "R13-20",
+      "route": "Route 13",
+      "crossStreets": "Downman Rd & Read Blvd",
+      "lat": 30.02143,
+      "lng": -89.959,
+      "amPickup": "7:12 AM",
+      "pmDropoff": "4:02 PM"
+    },
+    {
+      "id": "R14-01",
+      "route": "Route 14",
+      "crossStreets": "Gen Meyer Ave & Behrman Hwy",
+      "lat": 29.93567,
+      "lng": -90.03349,
+      "amPickup": "6:15 AM",
+      "pmDropoff": "3:05 PM"
+    },
+    {
+      "id": "R14-02",
+      "route": "Route 14",
+      "crossStreets": "Behrman Hwy & Gen Meyer Ave",
+      "lat": 29.94446,
+      "lng": -90.01875,
+      "amPickup": "6:18 AM",
+      "pmDropoff": "3:08 PM"
+    },
+    {
+      "id": "R14-03",
+      "route": "Route 14",
+      "crossStreets": "Gen Meyer Ave & General De Gaulle Dr",
+      "lat": 29.93425,
+      "lng": -90.01845,
+      "amPickup": "6:21 AM",
+      "pmDropoff": "3:11 PM"
+    },
+    {
+      "id": "R14-04",
+      "route": "Route 14",
+      "crossStreets": "Opelousas Ave & Gen Meyer Ave",
+      "lat": 29.94811,
+      "lng": -90.01876,
+      "amPickup": "6:24 AM",
+      "pmDropoff": "3:14 PM"
+    },
+    {
+      "id": "R14-05",
+      "route": "Route 14",
+      "crossStreets": "Opelousas Ave & Vallette St",
+      "lat": 29.94543,
+      "lng": -90.01332,
+      "amPickup": "6:27 AM",
+      "pmDropoff": "3:17 PM"
+    },
+    {
+      "id": "R14-06",
+      "route": "Route 14",
+      "crossStreets": "Newton St & Gen Meyer Ave",
+      "lat": 29.93362,
+      "lng": -90.03536,
+      "amPickup": "6:30 AM",
+      "pmDropoff": "3:20 PM"
+    },
+    {
+      "id": "R14-07",
+      "route": "Route 14",
+      "crossStreets": "Opelousas Ave & Newton St",
+      "lat": 29.94911,
+      "lng": -90.02281,
+      "amPickup": "6:33 AM",
+      "pmDropoff": "3:23 PM"
+    },
+    {
+      "id": "R14-08",
+      "route": "Route 14",
+      "crossStreets": "Newton St & Vallette St",
+      "lat": 29.93178,
+      "lng": -90.02592,
+      "amPickup": "6:36 AM",
+      "pmDropoff": "3:26 PM"
+    },
+    {
+      "id": "R14-09",
+      "route": "Route 14",
+      "crossStreets": "General De Gaulle Dr & Gen Meyer Ave",
+      "lat": 29.93885,
+      "lng": -90.03011,
+      "amPickup": "6:39 AM",
+      "pmDropoff": "3:29 PM"
+    },
+    {
+      "id": "R14-10",
+      "route": "Route 14",
+      "crossStreets": "Vallette St & Gen Meyer Ave",
+      "lat": 29.94217,
+      "lng": -90.02589,
+      "amPickup": "6:42 AM",
+      "pmDropoff": "3:32 PM"
+    },
+    {
+      "id": "R14-11",
+      "route": "Route 14",
+      "crossStreets": "Vallette St & General De Gaulle Dr",
+      "lat": 29.94079,
+      "lng": -90.01756,
+      "amPickup": "6:45 AM",
+      "pmDropoff": "3:35 PM"
+    },
+    {
+      "id": "R14-12",
+      "route": "Route 14",
+      "crossStreets": "Behrman Hwy & General De Gaulle Dr",
+      "lat": 29.94081,
+      "lng": -90.01754,
+      "amPickup": "6:48 AM",
+      "pmDropoff": "3:38 PM"
+    },
+    {
+      "id": "R14-13",
+      "route": "Route 14",
+      "crossStreets": "Newton St & General De Gaulle Dr",
+      "lat": 29.94211,
+      "lng": -90.03286,
+      "amPickup": "6:51 AM",
+      "pmDropoff": "3:41 PM"
+    },
+    {
+      "id": "R14-14",
+      "route": "Route 14",
+      "crossStreets": "Behrman Hwy & Opelousas Ave",
+      "lat": 29.95378,
+      "lng": -90.02442,
+      "amPickup": "6:54 AM",
+      "pmDropoff": "3:44 PM"
+    },
+    {
+      "id": "R14-15",
+      "route": "Route 14",
+      "crossStreets": "Vallette St & Behrman Hwy",
+      "lat": 29.93873,
+      "lng": -90.01497,
+      "amPickup": "6:57 AM",
+      "pmDropoff": "3:47 PM"
+    },
+    {
+      "id": "R14-16",
+      "route": "Route 14",
+      "crossStreets": "General De Gaulle Dr & Newton St",
+      "lat": 29.93158,
+      "lng": -90.03473,
+      "amPickup": "7:00 AM",
+      "pmDropoff": "3:50 PM"
+    },
+    {
+      "id": "R14-17",
+      "route": "Route 14",
+      "crossStreets": "Gen Meyer Ave & Opelousas Ave",
+      "lat": 29.93682,
+      "lng": -90.01963,
+      "amPickup": "7:03 AM",
+      "pmDropoff": "3:53 PM"
+    },
+    {
+      "id": "R14-18",
+      "route": "Route 14",
+      "crossStreets": "Gen Meyer Ave & Vallette St",
+      "lat": 29.95096,
+      "lng": -90.029,
+      "amPickup": "7:06 AM",
+      "pmDropoff": "3:56 PM"
+    },
+    {
+      "id": "R14-19",
+      "route": "Route 14",
+      "crossStreets": "Behrman Hwy & Vallette St",
+      "lat": 29.94701,
+      "lng": -90.03497,
+      "amPickup": "7:09 AM",
+      "pmDropoff": "3:59 PM"
+    },
+    {
+      "id": "R14-20",
+      "route": "Route 14",
+      "crossStreets": "Vallette St & Opelousas Ave",
+      "lat": 29.94544,
+      "lng": -90.02912,
+      "amPickup": "7:12 AM",
+      "pmDropoff": "4:02 PM"
+    },
+    {
+      "id": "R15-01",
+      "route": "Route 15",
+      "crossStreets": "St. Bernard Ave & Governor Nicholls St",
+      "lat": 29.95624,
+      "lng": -90.07291,
+      "amPickup": "6:15 AM",
+      "pmDropoff": "3:05 PM"
+    },
+    {
+      "id": "R15-02",
+      "route": "Route 15",
+      "crossStreets": "Governor Nicholls St & Esplanade Ave",
+      "lat": 29.95444,
+      "lng": -90.08159,
+      "amPickup": "6:18 AM",
+      "pmDropoff": "3:08 PM"
+    },
+    {
+      "id": "R15-03",
+      "route": "Route 15",
+      "crossStreets": "St. Bernard Ave & Esplanade Ave",
+      "lat": 29.97674,
+      "lng": -90.07733,
+      "amPickup": "6:21 AM",
+      "pmDropoff": "3:11 PM"
+    },
+    {
+      "id": "R15-04",
+      "route": "Route 15",
+      "crossStreets": "St. Bernard Ave & N Robertson St",
+      "lat": 29.95772,
+      "lng": -90.0819,
+      "amPickup": "6:24 AM",
+      "pmDropoff": "3:14 PM"
+    },
+    {
+      "id": "R15-05",
+      "route": "Route 15",
+      "crossStreets": "N Claiborne Ave & Governor Nicholls St",
+      "lat": 29.9725,
+      "lng": -90.06896,
+      "amPickup": "6:27 AM",
+      "pmDropoff": "3:17 PM"
+    },
+    {
+      "id": "R15-06",
+      "route": "Route 15",
+      "crossStreets": "Governor Nicholls St & N Claiborne Ave",
+      "lat": 29.96989,
+      "lng": -90.06797,
+      "amPickup": "6:30 AM",
+      "pmDropoff": "3:20 PM"
+    },
+    {
+      "id": "R15-07",
+      "route": "Route 15",
+      "crossStreets": "Governor Nicholls St & St. Bernard Ave",
+      "lat": 29.96833,
+      "lng": -90.0853,
+      "amPickup": "6:33 AM",
+      "pmDropoff": "3:23 PM"
+    },
+    {
+      "id": "R15-08",
+      "route": "Route 15",
+      "crossStreets": "St. Bernard Ave & Ursulines Ave",
+      "lat": 29.95505,
+      "lng": -90.08026,
+      "amPickup": "6:36 AM",
+      "pmDropoff": "3:26 PM"
+    },
+    {
+      "id": "R15-09",
+      "route": "Route 15",
+      "crossStreets": "N Robertson St & St. Bernard Ave",
+      "lat": 29.97727,
+      "lng": -90.07435,
+      "amPickup": "6:39 AM",
+      "pmDropoff": "3:29 PM"
+    },
+    {
+      "id": "R15-10",
+      "route": "Route 15",
+      "crossStreets": "N Robertson St & Ursulines Ave",
+      "lat": 29.95962,
+      "lng": -90.08326,
+      "amPickup": "6:42 AM",
+      "pmDropoff": "3:32 PM"
+    },
+    {
+      "id": "R15-11",
+      "route": "Route 15",
+      "crossStreets": "Ursulines Ave & St. Bernard Ave",
+      "lat": 29.96283,
+      "lng": -90.06627,
+      "amPickup": "6:45 AM",
+      "pmDropoff": "3:35 PM"
+    },
+    {
+      "id": "R15-12",
+      "route": "Route 15",
+      "crossStreets": "Ursulines Ave & N Robertson St",
+      "lat": 29.97247,
+      "lng": -90.07033,
+      "amPickup": "6:48 AM",
+      "pmDropoff": "3:38 PM"
+    },
+    {
+      "id": "R15-13",
+      "route": "Route 15",
+      "crossStreets": "Governor Nicholls St & N Robertson St",
+      "lat": 29.96405,
+      "lng": -90.08511,
+      "amPickup": "6:51 AM",
+      "pmDropoff": "3:41 PM"
+    },
+    {
+      "id": "R15-14",
+      "route": "Route 15",
+      "crossStreets": "N Claiborne Ave & Ursulines Ave",
+      "lat": 29.97498,
+      "lng": -90.07569,
+      "amPickup": "6:54 AM",
+      "pmDropoff": "3:44 PM"
+    },
+    {
+      "id": "R15-15",
+      "route": "Route 15",
+      "crossStreets": "N Claiborne Ave & Esplanade Ave",
+      "lat": 29.95601,
+      "lng": -90.08515,
+      "amPickup": "6:57 AM",
+      "pmDropoff": "3:47 PM"
+    },
+    {
+      "id": "R15-16",
+      "route": "Route 15",
+      "crossStreets": "Ursulines Ave & Governor Nicholls St",
+      "lat": 29.95754,
+      "lng": -90.0785,
+      "amPickup": "7:00 AM",
+      "pmDropoff": "3:50 PM"
+    },
+    {
+      "id": "R15-17",
+      "route": "Route 15",
+      "crossStreets": "Esplanade Ave & N Claiborne Ave",
+      "lat": 29.96396,
+      "lng": -90.07949,
+      "amPickup": "7:03 AM",
+      "pmDropoff": "3:53 PM"
+    },
+    {
+      "id": "R15-18",
+      "route": "Route 15",
+      "crossStreets": "Esplanade Ave & St. Bernard Ave",
+      "lat": 29.96327,
+      "lng": -90.08704,
+      "amPickup": "7:06 AM",
+      "pmDropoff": "3:56 PM"
+    },
+    {
+      "id": "R15-19",
+      "route": "Route 15",
+      "crossStreets": "St. Bernard Ave & N Claiborne Ave",
+      "lat": 29.96165,
+      "lng": -90.08662,
+      "amPickup": "7:09 AM",
+      "pmDropoff": "3:59 PM"
+    },
+    {
+      "id": "R15-20",
+      "route": "Route 15",
+      "crossStreets": "N Robertson St & Esplanade Ave",
+      "lat": 29.97299,
+      "lng": -90.0857,
+      "amPickup": "7:12 AM",
+      "pmDropoff": "4:02 PM"
+    }
+  ]
+}
