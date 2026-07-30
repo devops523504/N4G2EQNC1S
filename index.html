@@ -1,15 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="preload">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hop a Ride to KIPP!</title>
+<link rel="preload" href="assets/kipp-logo.png" as="image">
 <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<style>
+  /* Hide the page until fonts + the header logo have actually loaded, so
+     nothing flashes in unstyled/imageless. Removed by the script at the
+     end of body, with a timeout fallback so a slow resource never leaves
+     the page permanently blank. */
+  html.preload body { visibility: hidden; }
+</style>
 </head>
 <body>
 
@@ -33,7 +41,7 @@
 
   <p class="footer-tip">
     <strong>A friendly reminder:</strong> pickup and drop-off times are estimates and may shift slightly
-    as routes are finalized. We recommend families arrive at the pickup location a few minutes early,
+    as routes are finalized. We recommend families arrive at the pickup location 15 min early,
     especially during the first weeks of school, so no one misses their ride.
   </p>
 
@@ -63,17 +71,18 @@
       data-expired-callback="onTurnstileExpired"
       data-error-callback="onTurnstileExpired"
     ></div>
-    <button id="find-stops-btn" type="button" disabled>Find Closest Locations</button>
+    <button id="find-stops-btn" type="button" disabled>What's Closest?</button>
     <p id="status-message" class="status-message" role="status"></p>
   </section>
 
   <section class="results-panel" aria-label="Nearest locations" hidden>
-    <h2 id="results-heading" class="results-heading" hidden></h2>
     <div id="results-list" class="results-list"></div>
-  </section>
 
-  <section class="map-panel" aria-label="Map of locations" hidden>
-    <div id="map"></div>
+    <div class="map-panel" hidden>
+      <div id="map"></div>
+    </div>
+
+    <p class="results-footnote">*These times are the best estimates of the bus companies serving our schools and are subject to change.</p>
   </section>
 
 </main>
@@ -89,5 +98,33 @@
 <script src="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.js"></script>
 <script src="js/config.js"></script>
 <script src="js/app.js"></script>
+<script>
+  (function () {
+    var revealed = false;
+    function reveal() {
+      if (revealed) return;
+      revealed = true;
+      document.documentElement.classList.remove("preload");
+    }
+
+    var logoImg = document.querySelector(".header-logo-badge img");
+    var logoReady = new Promise(function (resolve) {
+      if (!logoImg || logoImg.complete) {
+        resolve();
+      } else {
+        logoImg.addEventListener("load", resolve);
+        logoImg.addEventListener("error", resolve);
+      }
+    });
+    var fontsReady = document.fonts && document.fonts.ready
+      ? document.fonts.ready
+      : Promise.resolve();
+
+    Promise.all([logoReady, fontsReady]).then(reveal);
+
+    // Safety net: never leave the page blank if something stalls.
+    setTimeout(reveal, 2500);
+  })();
+</script>
 </body>
 </html>

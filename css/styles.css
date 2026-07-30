@@ -59,14 +59,14 @@ body {
   margin-left: auto;
   background: #ffffff;
   border-radius: 6px;
-  padding: 4px 8px;
+  padding: 0 10px;
   display: flex;
   align-items: center;
 }
 
 .header-logo-badge img {
   display: block;
-  height: 36px;
+  height: 44px;
   width: auto;
 }
 
@@ -86,12 +86,24 @@ body {
 }
 
 .search-panel,
-.results-panel,
-.map-panel {
+.results-panel {
   background: var(--color-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: 1.25rem;
+}
+
+.results-panel .map-panel {
+  margin-top: 1rem;
+}
+
+.results-footnote {
+  margin: 1rem 0 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-muted);
+  font-size: 0.8rem;
+  font-style: italic;
 }
 
 .search-panel label {
@@ -206,12 +218,6 @@ body {
   font-weight: 600;
 }
 
-.results-heading {
-  margin: 0 0 1rem;
-  font-size: 1.1rem;
-  color: var(--color-primary);
-}
-
 .results-list {
   display: grid;
   gap: 1rem;
@@ -270,11 +276,6 @@ body {
   color: var(--color-accent-dark);
   font-weight: 600;
   font-size: 0.8rem;
-}
-
-.stop-location {
-  margin: 0 0 0.4rem;
-  font-weight: 600;
 }
 
 .stop-distance {
@@ -363,13 +364,21 @@ body {
 }
 
 .home-marker {
-  width: 26px;
-  height: 26px;
-  border-radius: 50% 50% 50% 0;
-  transform: rotate(-45deg);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
   background: var(--color-primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 2px solid #fff;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+.home-marker svg {
+  width: 18px;
+  height: 18px;
 }
 
 /* Mapbox popup styling to match the site */
@@ -402,9 +411,25 @@ body {
 }
 
 .popup-location {
-  margin: 0;
+  margin: 0 0 0.4rem;
   color: var(--color-text);
   font-size: 0.88rem;
+}
+
+.popup-times {
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.15rem 0.5rem;
+  font-size: 0.8rem;
+}
+
+.popup-times dt {
+  font-weight: 600;
+}
+
+.popup-times dd {
+  margin: 0;
 }
 
 .popup-school-name {

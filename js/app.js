@@ -6,7 +6,6 @@
   const suggestionsList = document.getElementById("suggestions-list");
   const findBtn = document.getElementById("find-stops-btn");
   const statusMessage = document.getElementById("status-message");
-  const resultsHeading = document.getElementById("results-heading");
   const resultsList = document.getElementById("results-list");
 
   let schools = []; // public data only -- never the bus stop roster
@@ -84,6 +83,7 @@
         center: [NOLA_CENTER.lng, NOLA_CENTER.lat],
         zoom: 11,
       });
+      map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), "top-right");
     } catch (err) {
       map = null;
       mapInitFailed = true;
@@ -261,12 +261,9 @@
   function renderResults(stops, school) {
     document.querySelector(".results-panel").hidden = false;
 
-    if (school) {
-      resultsHeading.textContent = `Nearest locations for ${school.name}`;
-      resultsHeading.hidden = false;
-    }
-
     resultsList.innerHTML = "";
+
+    const routeSuffix = routeSuffixFor(school);
 
     stops.forEach((stop, index) => {
       const stopNumber = index + 1;
@@ -276,18 +273,35 @@
       card.innerHTML = `
         <div class="stop-card-header">
           <span class="stop-number-badge ${rankClass}">${stopNumber}</span>
-          <h3>${escapeHtml(stop.crossStreets)}</h3>
+          <h3>${formatCrossStreets(stop.crossStreets)}</h3>
         </div>
-        <span class="route-badge">${escapeHtml(stop.route)}</span>
+        <span class="route-badge">${escapeHtml(stop.route)}${routeSuffix}</span>
         <p class="stop-distance">${stop.distanceMiles.toFixed(2)} miles from your address</p>
         <dl class="stop-times">
-          <dt>AM Pickup</dt><dd>${escapeHtml(stop.amPickup)}</dd>
-          <dt>PM Drop-off</dt><dd>${escapeHtml(stop.pmDropoff)}</dd>
-          <dt>Early Release Drop-off</dt><dd>${escapeHtml(stop.wedEarlyDismissal)}</dd>
+          <dt>AM Pickup*</dt><dd>${escapeHtml(stop.amPickup)}</dd>
+          <dt>PM Drop-off*</dt><dd>${escapeHtml(stop.pmDropoff)}</dd>
+          <dt>Early Release*</dt><dd>${escapeHtml(stop.wedEarlyDismissal)}</dd>
         </dl>
       `;
       resultsList.appendChild(card);
     });
+  }
+
+  // Real stop labels are either "<street> X <street>" (a cross street) or a
+  // plain address. Cross streets get split onto two lines, with the second
+  // street prefixed by "X", so long labels don't wrap awkwardly mid-word.
+  function formatCrossStreets(text) {
+    const idx = text.indexOf(" X ");
+    if (idx === -1) {
+      return escapeHtml(text);
+    }
+    const first = text.slice(0, idx);
+    const second = text.slice(idx + 3);
+    return `${escapeHtml(first)}<br>X ${escapeHtml(second)}`;
+  }
+
+  function routeSuffixFor(school) {
+    return school && school.abbr ? ` - ${escapeHtml(school.abbr)}` : "";
   }
 
   function updateResultsOnMap(stops) {
@@ -310,6 +324,12 @@
 
     const homeEl = document.createElement("div");
     homeEl.className = "home-marker";
+    homeEl.innerHTML =
+      '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">' +
+      '<path d="M4 11.5 12 4l8 7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>' +
+      '<path d="M6 10v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>' +
+      '<path d="M10 20v-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>' +
+      "</svg>";
 
     const homeMarker = new mapboxgl.Marker({ element: homeEl })
       .setLngLat([selectedCoords.lng, selectedCoords.lat])
@@ -317,6 +337,8 @@
       .addTo(map);
     resultMarkers.push(homeMarker);
     bounds.extend([selectedCoords.lng, selectedCoords.lat]);
+
+    const routeSuffix = routeSuffixFor(school);
 
     stops.forEach((stop, index) => {
       const stopNumber = index + 1;
@@ -327,8 +349,13 @@
 
       const popupHtml = `
         <span class="popup-stop-badge ${rankClass}">#${stopNumber}</span>
-        <p class="popup-route">${escapeHtml(stop.route)}</p>
-        <p class="popup-location">${escapeHtml(stop.crossStreets)}</p>
+        <p class="popup-route">${escapeHtml(stop.route)}${routeSuffix}</p>
+        <p class="popup-location">${formatCrossStreets(stop.crossStreets)}</p>
+        <dl class="popup-times">
+          <dt>AM Pickup*</dt><dd>${escapeHtml(stop.amPickup)}</dd>
+          <dt>PM Drop-off*</dt><dd>${escapeHtml(stop.pmDropoff)}</dd>
+          <dt>Early Release*</dt><dd>${escapeHtml(stop.wedEarlyDismissal)}</dd>
+        </dl>
       `;
 
       const marker = new mapboxgl.Marker({ element: el })
