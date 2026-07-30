@@ -47,20 +47,39 @@ significantly, but if this matters a lot for the real dataset, consider
 also adding rate limiting (e.g. Cloudflare's built-in rate limiting rules)
 on `/api/nearest-stops`.
 
-### Data status: what's real vs. placeholder
+### Data status: real roster, not demo data
 
-- **Schools are real.** The 7 schools in `data/schools.json` use their
-  actual names, addresses, and geocoded coordinates (looked up via web
-  search and the Mapbox Geocoding API).
-- **Routes, stops, and times are synthetic demo data.** The 30 routes
-  (~8-20 stops each) use real New Orleans street names combined
-  arbitrarily, plausible-looking pickup/drop-off times, and each route is
-  assigned to exactly one school. None of this reflects an actual bus
-  roster — it exists only to demonstrate the app. Replace
-  `functions/_data/stops.json` with the real route roster before this goes
-  live for families.
+Both `data/schools.json` and `functions/_data/stops.json` now hold real
+data:
 
-## Replacing the sample data
+- **Schools**: actual names, addresses, and geocoded coordinates.
+- **Stops**: the real roster (1,457 stops across 7 schools, 12-24 routes
+  per school), converted from the transportation team's source file
+  (`Unique_Bus_Stops_by_Route FINAL.xlsx`) — school, route #, cross
+  street/address, AM pickup, standard PM drop-off, Wednesday/early-release
+  PM drop-off, and geolocation for each stop.
+
+Worth knowing about the source data (per a notes field in the original
+spreadsheet, preserved in `stops.json`'s `_comment`):
+
+- PM drop-off time labels were inconsistent across the source files
+  feeding this roster (e.g. "Monday" vs. "Wednesday" vs. "Tuesday" used
+  for what should be the same two categories). They were resolved by
+  pattern — the later time became the standard-day PM drop-off, and the
+  time roughly 2 hours earlier became the Wednesday/early-release
+  drop-off. **Worth confirming against each school's actual bell
+  schedule** before treating this as final.
+- Duplicate stop entries (same school/route, differing only by minor
+  formatting) were already merged upstream, keeping the earliest time
+  among duplicates.
+- Geolocation was verified upstream, with a handful of points manually
+  corrected.
+
+If the roster needs to be updated again later, replace
+`functions/_data/stops.json` following the schema below — there's no need
+to touch `data/schools.json` unless a school itself changes.
+
+## Data schema (for future roster updates)
 
 `data/schools.json` — one entry per school:
 

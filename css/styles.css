@@ -54,6 +54,22 @@ body {
   color: var(--color-accent);
 }
 
+.header-logo-badge {
+  flex: none;
+  margin-left: auto;
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+}
+
+.header-logo-badge img {
+  display: block;
+  height: 36px;
+  width: auto;
+}
+
 .site-header h1 {
   margin: 0;
   font-size: 1.75rem;
