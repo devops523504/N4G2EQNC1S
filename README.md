@@ -1,5 +1,7 @@
 # Find Your Bus Stop
 
+**Live site:** https://kipp-bus-stop-finder.pages.dev
+
 A simple static website that lets families pick their child's school and
 enter their home address (with autocomplete) to see the 3 nearest bus
 stops for that school, along with route number, AM pickup time, and PM
@@ -92,21 +94,30 @@ Then open `http://localhost:8123`.
 
 ## Deploying
 
-This is a plain static site (HTML/CSS/JS + one JSON file), so it can be
-hosted on any static hosting provider — Netlify, Vercel, GitHub Pages, or a
-school website's existing static hosting.
+**Live site:** https://kipp-bus-stop-finder.pages.dev
+
+This is a plain static site (HTML/CSS/JS + one JSON file), hosted on
+**Cloudflare Pages**. GitHub remains the source of truth for the code and
+its history — Cloudflare Pages is just the hosting target, not a git host.
 
 This repo includes a GitHub Actions workflow
-(`.github/workflows/deploy.yml`) that deploys to GitHub Pages automatically
-on every push to `master`. It injects the Mapbox token from a repository
-secret named `MAPBOX_ACCESS_TOKEN` at deploy time, so the real token is
-never stored in the git history. To use it on a fork/new repo:
+(`.github/workflows/deploy.yml`) that deploys to Cloudflare Pages
+automatically on every push to `master`, via `wrangler pages deploy`. It
+injects the Mapbox token from a repository secret (`MAPBOX_ACCESS_TOKEN`)
+at deploy time, so the real token is never stored in git history. To use
+this workflow on a fork/new repo:
 
-1. Repo Settings → Secrets and variables → Actions → add secret
-   `MAPBOX_ACCESS_TOKEN` with your Mapbox token.
-2. Repo Settings → Pages → Source → "GitHub Actions".
-3. Push to `master` (or run the workflow manually) and the site deploys to
-   `https://<username>.github.io/<repo-name>/`.
+1. Repo Settings → Secrets and variables → Actions → add secrets:
+   - `MAPBOX_ACCESS_TOKEN` — your Mapbox token
+   - `CLOUDFLARE_API_TOKEN` — a Cloudflare API token with Pages edit access
+   - `CLOUDFLARE_ACCOUNT_ID` — your Cloudflare account ID
+2. Create the Pages project once (`wrangler pages project create
+   kipp-bus-stop-finder`), or change the `--project-name` in the workflow
+   to a project you already have.
+3. Push to `master` (or run the workflow manually).
+
+GitHub Pages hosting has been turned off for this repo to avoid two live
+copies of the site.
 
 If deploying elsewhere (Netlify/Vercel/etc.), just make sure `js/config.js`
 exists with a real token before/at deploy time — it is not part of the
@@ -117,9 +128,11 @@ repo.
 The search form requires completing a Cloudflare Turnstile challenge before
 "Find My Bus Stops" is enabled. The widget's site key is hardcoded in
 `index.html` (Turnstile site keys are meant to be public, unlike API
-tokens). It's registered to the `devops523504.github.io` domain only, so it
-will show a connection error on localhost or any other domain — that's
-expected, not a bug.
+tokens). It's registered to the `kipp-bus-stop-finder.pages.dev` domain
+only, so it will show a connection error on localhost or any other domain
+— that's expected, not a bug. If the domain ever changes, update the
+widget's allowed domains in the Cloudflare dashboard (Turnstile →
+this widget → Settings), or via the API.
 
 **Important limitation:** this is a fully static site with no backend, so
 there is nowhere to call Cloudflare's `siteverify` endpoint to cryptographically
