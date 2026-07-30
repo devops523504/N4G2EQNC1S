@@ -1,30 +1,58 @@
 # Find Your Bus Stop
 
-A simple static website that lets families enter their home address (with
-autocomplete) and see the 3 nearest school bus stops, along with route
-number, AM pickup time, and PM drop-off time.
+A simple static website that lets families pick their child's school and
+enter their home address (with autocomplete) to see the 3 nearest bus
+stops for that school, along with route number, AM pickup time, and PM
+drop-off time.
 
 ## How it works
 
 - `index.html` / `css/styles.css` — page structure and styling.
 - `js/config.js` — holds the Mapbox access token.
-- `js/app.js` — address autocomplete (Mapbox Geocoding API), distance
-  calculation (straight-line/haversine, in miles), results rendering, and an
-  optional map view.
-- `data/bus-stops.json` — the bus stop dataset and the school's location.
-  This is currently **sample placeholder data** for New Orleans, not a real
-  route roster.
+- `js/app.js` — school dropdown filtering, address autocomplete (Mapbox
+  Geocoding API), distance calculation (straight-line/haversine, in
+  miles), results rendering, and an optional map view.
+- `data/bus-stops.json` — the schools and bus stop dataset.
 
 No backend or database server is required — everything runs in the
 browser. `bus-stops.json` acts as the "database."
 
+### Data status: what's real vs. placeholder
+
+- **Schools are real.** The 7 schools in `data/bus-stops.json` use their
+  actual names, addresses, and geocoded coordinates (looked up via web
+  search and the Mapbox Geocoding API).
+- **Routes, stops, and times are synthetic demo data.** The 30 routes
+  (~20 stops each) use real New Orleans street names combined
+  arbitrarily, plausible-looking pickup/drop-off times, and each route is
+  assigned to exactly one school. None of this reflects an actual bus
+  roster — it exists only to demonstrate the app. Replace `stops` with
+  the real route roster before this goes live for families.
+
 ## Replacing the sample data
 
-Edit `data/bus-stops.json`. Each stop needs:
+Edit `data/bus-stops.json`. It has two top-level arrays:
+
+`schools` — one entry per school:
+
+```json
+{
+  "id": "kipp-central-city",
+  "name": "KIPP Central City",
+  "address": "2514 Third Street, New Orleans, LA 70113",
+  "lat": 29.939595,
+  "lng": -90.090735
+}
+```
+
+`stops` — one entry per bus stop. `schoolId` must match a school's `id`
+above — each route serves exactly one school, so every stop on that route
+should carry the same `schoolId`:
 
 ```json
 {
   "id": "unique-id",
+  "schoolId": "kipp-central-city",
   "route": "Route 3",
   "crossStreets": "Magazine St & Napoleon Ave",
   "lat": 29.9297,
@@ -33,9 +61,6 @@ Edit `data/bus-stops.json`. Each stop needs:
   "pmDropoff": "3:30 PM"
 }
 ```
-
-Also update the `school` object at the top with the real school name,
-address, and coordinates (used to center the map).
 
 To get `lat`/`lng` for a street corner or address, you can look it up with
 the same Mapbox geocoder this site uses, or any mapping tool — search the

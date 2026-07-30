@@ -1,6 +1,7 @@
 (function () {
   "use strict";
 
+  const schoolSelect = document.getElementById("school-select");
   const addressInput = document.getElementById("address-input");
   const suggestionsList = document.getElementById("suggestions-list");
   const findBtn = document.getElementById("find-stops-btn");
@@ -9,11 +10,14 @@
 
   let busData = null;
   let selectedCoords = null; // { lat, lng, placeName }
+  let selectedSchoolId = "";
   let debounceTimer = null;
   let map = null;
-  let markers = [];
+  let schoolMarkers = [];
+  let resultMarkers = [];
 
   const MILES_PER_METER = 0.000621371;
+  const NOLA_CENTER = { lat: 29.9700, lng: -90.0700 };
 
   init();
 
@@ -25,6 +29,8 @@
       setStatus("Could not load bus stop data. Please try again later.", true);
       return;
     }
+
+    populateSchoolSelect();
 
     if (!MAPBOX_ACCESS_TOKEN || MAPBOX_ACCESS_TOKEN.startsWith("REPLACE_WITH")) {
       setStatus(
@@ -38,19 +44,16 @@
       map = new mapboxgl.Map({
         container: "map",
         style: "mapbox://styles/mapbox/streets-v12",
-        center: [busData.school.lng, busData.school.lat],
-        zoom: 12,
+        center: [NOLA_CENTER.lng, NOLA_CENTER.lat],
+        zoom: 11,
       });
-
-      new mapboxgl.Marker({ color: "#1d4e89" })
-        .setLngLat([busData.school.lng, busData.school.lat])
-        .setPopup(new mapboxgl.Popup().setText(busData.school.name))
-        .addTo(map);
+      renderSchoolMarkers();
     } catch (err) {
       map = null;
       document.querySelector(".map-panel").hidden = true;
     }
 
+    schoolSelect.addEventListener("change", onSchoolChange);
     addressInput.addEventListener("input", onAddressInput);
     addressInput.addEventListener("keydown", onKeydown);
     document.addEventListener("click", (e) => {
@@ -61,10 +64,38 @@
     findBtn.addEventListener("click", onFindStops);
   }
 
+  function populateSchoolSelect() {
+    busData.schools.forEach((school) => {
+      const option = document.createElement("option");
+      option.value = school.id;
+      option.textContent = school.name;
+      schoolSelect.appendChild(option);
+    });
+  }
+
+  function renderSchoolMarkers() {
+    schoolMarkers.forEach((m) => m.remove());
+    schoolMarkers = [];
+
+    busData.schools.forEach((school) => {
+      const marker = new mapboxgl.Marker({ color: "#1d4e89" })
+        .setLngLat([school.lng, school.lat])
+        .setPopup(new mapboxgl.Popup().setText(school.name))
+        .addTo(map);
+      schoolMarkers.push(marker);
+    });
+  }
+
+  function onSchoolChange() {
+    selectedSchoolId = schoolSelect.value;
+    updateFindButtonState();
+    setStatus("");
+  }
+
   function onAddressInput() {
     const query = addressInput.value.trim();
     selectedCoords = null;
-    findBtn.disabled = true;
+    updateFindButtonState();
     clearTimeout(debounceTimer);
 
     if (query.length < 3) {
@@ -80,7 +111,7 @@
       return;
     }
 
-    const proximity = `${busData.school.lng},${busData.school.lat}`;
+    const proximity = `${NOLA_CENTER.lng},${NOLA_CENTER.lat}`;
     const url =
       `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(query)}.json` +
       `?access_token=${MAPBOX_ACCESS_TOKEN}` +
@@ -127,7 +158,7 @@
       lat: feature.center[1],
       placeName: feature.place_name,
     };
-    findBtn.disabled = false;
+    updateFindButtonState();
     hideSuggestions();
     setStatus("");
   }
@@ -144,13 +175,23 @@
     }
   }
 
+  function updateFindButtonState() {
+    findBtn.disabled = !(selectedCoords && selectedSchoolId);
+  }
+
   function onFindStops() {
+    if (!selectedSchoolId) {
+      setStatus("Please select your child's school.", true);
+      return;
+    }
     if (!selectedCoords) {
       setStatus("Please choose an address from the suggestions list.", true);
       return;
     }
 
-    const ranked = busData.stops
+    const schoolStops = busData.stops.filter((s) => s.schoolId === selectedSchoolId);
+
+    const ranked = schoolStops
       .map((stop) => ({
         ...stop,
         distanceMiles: haversineMiles(
@@ -164,7 +205,7 @@
       .slice(0, 3);
 
     renderResults(ranked);
-    updateMap(ranked);
+    updateResultsOnMap(ranked);
     setStatus("");
   }
 
@@ -187,20 +228,21 @@
     });
   }
 
-  function updateMap(stops) {
+  function updateResultsOnMap(stops) {
     if (!map) return;
 
-    markers.forEach((m) => m.remove());
-    markers = [];
+    resultMarkers.forEach((m) => m.remove());
+    resultMarkers = [];
 
+    const school = busData.schools.find((s) => s.id === selectedSchoolId);
     const bounds = new mapboxgl.LngLatBounds();
-    bounds.extend([busData.school.lng, busData.school.lat]);
+    if (school) bounds.extend([school.lng, school.lat]);
 
     const homeMarker = new mapboxgl.Marker({ color: "#c0392b" })
       .setLngLat([selectedCoords.lng, selectedCoords.lat])
       .setPopup(new mapboxgl.Popup().setText("Your home address"))
       .addTo(map);
-    markers.push(homeMarker);
+    resultMarkers.push(homeMarker);
     bounds.extend([selectedCoords.lng, selectedCoords.lat]);
 
     stops.forEach((stop) => {
@@ -208,7 +250,7 @@
         .setLngLat([stop.lng, stop.lat])
         .setPopup(new mapboxgl.Popup().setText(`${stop.route}: ${stop.crossStreets}`))
         .addTo(map);
-      markers.push(marker);
+      resultMarkers.push(marker);
       bounds.extend([stop.lng, stop.lat]);
     });
 
