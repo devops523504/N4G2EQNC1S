@@ -14,7 +14,7 @@
   let selectedSchoolId = "";
   let debounceTimer = null;
   let map = null;
-  let schoolMarkers = [];
+  let mapInitFailed = false;
   let resultMarkers = [];
 
   const MILES_PER_METER = 0.000621371;
@@ -41,18 +41,6 @@
     }
 
     mapboxgl.accessToken = MAPBOX_ACCESS_TOKEN;
-    try {
-      map = new mapboxgl.Map({
-        container: "map",
-        style: "mapbox://styles/mapbox/streets-v12",
-        center: [NOLA_CENTER.lng, NOLA_CENTER.lat],
-        zoom: 11,
-      });
-      renderSchoolMarkers();
-    } catch (err) {
-      map = null;
-      document.querySelector(".map-panel").hidden = true;
-    }
 
     schoolSelect.addEventListener("change", onSchoolChange);
     addressInput.addEventListener("input", onAddressInput);
@@ -74,26 +62,39 @@
     });
   }
 
-  function renderSchoolMarkers() {
-    schoolMarkers.forEach((m) => m.remove());
-    schoolMarkers = [];
+  function ensureMapInitialized() {
+    if (map || mapInitFailed) return;
 
-    busData.schools.forEach((school) => {
-      const el = document.createElement("div");
-      el.className = "school-marker";
-      el.innerHTML = `<img src="assets/kipp-logo.png" alt="${escapeHtml(school.name)}">`;
+    try {
+      map = new mapboxgl.Map({
+        container: "map",
+        style: "mapbox://styles/mapbox/streets-v12",
+        center: [NOLA_CENTER.lng, NOLA_CENTER.lat],
+        zoom: 11,
+      });
+    } catch (err) {
+      map = null;
+      mapInitFailed = true;
+      document.querySelector(".map-panel").hidden = true;
+    }
+  }
 
-      const popupHtml = `
-        <p class="popup-school-name">${escapeHtml(school.name)}</p>
-        <p class="popup-school-address">${escapeHtml(school.address)}</p>
-      `;
+  function addSchoolMarker(school) {
+    const el = document.createElement("div");
+    el.className = "school-marker";
+    el.innerHTML = `<img src="assets/kipp-logo.png" alt="${escapeHtml(school.name)}">`;
 
-      const marker = new mapboxgl.Marker({ element: el })
-        .setLngLat([school.lng, school.lat])
-        .setPopup(new mapboxgl.Popup({ offset: 18 }).setHTML(popupHtml))
-        .addTo(map);
-      schoolMarkers.push(marker);
-    });
+    const popupHtml = `
+      <p class="popup-school-name">${escapeHtml(school.name)}</p>
+      <p class="popup-school-address">${escapeHtml(school.address)}</p>
+    `;
+
+    const marker = new mapboxgl.Marker({ element: el })
+      .setLngLat([school.lng, school.lat])
+      .setPopup(new mapboxgl.Popup({ offset: 18 }).setHTML(popupHtml))
+      .addTo(map);
+    resultMarkers.push(marker);
+    return marker;
   }
 
   function onSchoolChange() {
@@ -245,6 +246,7 @@
         <dl class="stop-times">
           <dt>AM Pickup</dt><dd>${escapeHtml(stop.amPickup)}</dd>
           <dt>PM Drop-off</dt><dd>${escapeHtml(stop.pmDropoff)}</dd>
+          <dt>Wed/Early Dismissal PM Drop-off</dt><dd>${escapeHtml(stop.wedEarlyDismissal)}</dd>
         </dl>
       `;
       resultsList.appendChild(card);
@@ -252,14 +254,22 @@
   }
 
   function updateResultsOnMap(stops) {
+    const mapPanel = document.querySelector(".map-panel");
+    mapPanel.hidden = false;
+
+    ensureMapInitialized();
     if (!map) return;
+    map.resize();
 
     resultMarkers.forEach((m) => m.remove());
     resultMarkers = [];
 
     const school = busData.schools.find((s) => s.id === selectedSchoolId);
     const bounds = new mapboxgl.LngLatBounds();
-    if (school) bounds.extend([school.lng, school.lat]);
+    if (school) {
+      addSchoolMarker(school);
+      bounds.extend([school.lng, school.lat]);
+    }
 
     const homeEl = document.createElement("div");
     homeEl.className = "home-marker";
